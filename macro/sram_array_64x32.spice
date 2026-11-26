@@ -1,0 +1,1609 @@
+* NGSPICE file created from sram_array_64x32.ext - technology: sky130A
+
+.subckt sram_bitcell WL BL BLB VDD GND w_253_n64# VSUBS
+X0 GND a_55_58# a_29_28# VSUBS sky130_fd_pr__nfet_01v8 ad=0.182 pd=1.86 as=0.09805 ps=0.98 w=0.65 l=0.15
+X1 a_55_58# a_29_28# VDD w_253_n64# sky130_fd_pr__pfet_01v8_hvt ad=0.1218 pd=1.42 as=0.1176 ps=1.4 w=0.42 l=0.15
+X2 a_29_28# WL BLB VSUBS sky130_fd_pr__nfet_01v8 ad=0.09805 pd=0.98 as=0.1176 ps=1.4 w=0.42 l=0.15
+X3 BL WL a_55_58# VSUBS sky130_fd_pr__nfet_01v8 ad=0.1176 pd=1.4 as=0.09805 ps=0.98 w=0.42 l=0.15
+X4 VDD a_55_58# a_29_28# w_253_n64# sky130_fd_pr__pfet_01v8_hvt ad=0.1176 pd=1.4 as=0.1218 ps=1.42 w=0.42 l=0.15
+X5 a_55_58# a_29_28# GND VSUBS sky130_fd_pr__nfet_01v8 ad=0.09805 pd=0.98 as=0.182 ps=1.86 w=0.65 l=0.15
+.ends
+
+.subckt sram_quad c01/w_253_n64# c11/w_253_n64# c10/WL c01/VDD c11/BL c11/VDD c01/BLB
++ c11/GND c11/WL c01/BL c11/BLB VSUBS
+Xc10 c10/WL c11/BL c11/BLB c11/VDD c11/GND c11/w_253_n64# VSUBS sram_bitcell
+Xc00 c10/WL c01/BL c01/BLB c01/VDD c11/GND c01/w_253_n64# VSUBS sram_bitcell
+Xc01 c11/WL c01/BL c01/BLB c01/VDD c11/GND c01/w_253_n64# VSUBS sram_bitcell
+Xc11 c11/WL c11/BL c11/BLB c11/VDD c11/GND c11/w_253_n64# VSUBS sram_bitcell
+.ends
+
+.subckt sram_array_64x32_cells blk2[6|9]/c11/WL blk1[2|9]/c11/WL blk3[6|9]/c11/WL
++ blk2[2|9]/c11/WL blk0[5|9]/c10/WL blk3[2|9]/c11/WL blk1[5|9]/c10/WL blk0[1|9]/c10/WL
++ blk2[5|9]/c10/WL blk1[1|9]/c10/WL blk3[5|9]/c10/WL blk2[1|9]/c10/WL blk3[7|2]/c01/BL
++ blk3[1|9]/c10/WL blk3[7|6]/c01/BL blk3[7|1]/c11/BL blk0[7|9]/c11/WL blk3[7|5]/c11/BL
++ blk0[3|9]/c11/WL blk1[7|9]/c11/WL blk3[7|9]/c11/BL blk3[7|0]/c01/BLB blk3[7|9]/c11/BLB
++ blk2[7|9]/c11/WL blk1[3|9]/c11/WL blk3[7|9]/c11/WL blk2[3|9]/c11/WL blk0[6|9]/c10/WL
++ blk3[3|9]/c11/WL blk1[6|9]/c10/WL blk0[2|9]/c10/WL blk3[7|7]/c01/BLB blk2[6|9]/c10/WL
++ blk3[7|12]/c01/BL blk3[7|6]/c11/BLB blk1[2|9]/c10/WL blk3[6|9]/c10/WL blk2[2|9]/c10/WL
++ blk3[2|9]/c10/WL blk3[7|11]/c11/BL blk3[7|3]/c01/BL blk3[7|15]/c11/BL blk3[7|7]/c01/BL
++ blk3[7|4]/c01/BLB blk3[7|3]/c11/BLB blk3[7|2]/c11/BL blk0[4|9]/c11/WL blk3[7|6]/c11/BL
++ blk1[4|9]/c11/WL blk0[0|9]/c11/WL blk3[7|14]/c01/BLB blk2[4|9]/c11/WL blk3[7|13]/c11/BLB
++ blk1[0|9]/c11/WL blk3[4|9]/c11/WL blk0[7|9]/c10/WL blk2[0|9]/c11/WL blk3[7|1]/c01/BLB
++ blk3[7|0]/c11/BLB blk1[7|9]/c10/WL blk0[3|9]/c10/WL blk3[0|9]/c11/WL blk2[7|9]/c10/WL
++ blk1[3|9]/c10/WL blk3[7|13]/c01/BL blk3[7|9]/c10/WL blk2[3|9]/c10/WL blk3[7|10]/c11/BLB
++ blk3[7|0]/c01/BL blk3[3|9]/c10/WL blk3[7|8]/c01/BLB blk3[7|7]/c11/BLB blk3[7|12]/c11/BL
++ blk3[7|4]/c01/BL blk3[7|8]/c01/BL blk3[7|3]/c11/BL blk0[5|9]/c11/WL blk3[7|7]/c11/BL
++ blk1[5|9]/c11/WL blk3[7|5]/c01/BLB blk0[1|9]/c11/WL blk3[7|15]/c11/BLB blk3[7|4]/c11/BLB
++ blk2[5|9]/c11/WL blk1[1|9]/c11/WL blk3[5|9]/c11/WL blk2[1|9]/c11/WL blk3[1|9]/c11/WL
++ blk0[4|9]/c10/WL blk3[7|15]/c01/BLB blk3[7|14]/c11/BLB blk3[7|10]/c01/BL blk3[7|6]/c01/BLB
++ blk1[4|9]/c10/WL blk3[7|13]/c01/BLB blk3[7|2]/c01/BLB blk3[7|5]/c11/BLB blk0[0|9]/c10/WL
++ blk3[7|12]/c11/BLB blk3[7|1]/c11/BLB blk3[7|14]/c01/BL blk2[4|9]/c10/WL blk1[0|9]/c10/WL
++ blk3[7|11]/c01/BL blk3[4|9]/c10/WL blk2[0|9]/c10/WL blk3[7|1]/c01/BL blk3[7|15]/c01/BL
++ blk3[0|9]/c10/WL blk3[7|13]/c11/BL blk3[7|12]/c01/BLB blk3[7|5]/c01/BL blk3[7|11]/c11/BLB
++ blk3[7|10]/c11/BL blk3[7|0]/c11/BL blk3[7|11]/c01/BLB blk3[7|3]/c01/BLB blk3[7|9]/c01/BL
++ blk3[7|9]/c01/BLB blk3[7|8]/c11/BLB blk3[7|2]/c11/BLB blk3[7|10]/c01/BLB blk3[7|14]/c11/BL
++ blk0[6|9]/c11/WL blk3[7|4]/c11/BL blk3[7|9]/c11/VDD blk1[6|9]/c11/WL blk3[7|8]/c11/BL
++ blk0[2|9]/c11/WL VSUBS
+Xblk0[0|0] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|0]/c11/BL blk3[7|9]/c11/VDD blk3[7|0]/c01/BLB VSUBS blk0[0|9]/c11/WL blk3[7|0]/c01/BL
++ blk3[7|0]/c11/BLB VSUBS sram_quad
+Xblk0[1|0] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|0]/c11/BL blk3[7|9]/c11/VDD blk3[7|0]/c01/BLB VSUBS blk0[1|9]/c11/WL blk3[7|0]/c01/BL
++ blk3[7|0]/c11/BLB VSUBS sram_quad
+Xblk0[2|0] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|0]/c11/BL blk3[7|9]/c11/VDD blk3[7|0]/c01/BLB VSUBS blk0[2|9]/c11/WL blk3[7|0]/c01/BL
++ blk3[7|0]/c11/BLB VSUBS sram_quad
+Xblk0[3|0] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|0]/c11/BL blk3[7|9]/c11/VDD blk3[7|0]/c01/BLB VSUBS blk0[3|9]/c11/WL blk3[7|0]/c01/BL
++ blk3[7|0]/c11/BLB VSUBS sram_quad
+Xblk0[4|0] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|0]/c11/BL blk3[7|9]/c11/VDD blk3[7|0]/c01/BLB VSUBS blk0[4|9]/c11/WL blk3[7|0]/c01/BL
++ blk3[7|0]/c11/BLB VSUBS sram_quad
+Xblk0[5|0] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|0]/c11/BL blk3[7|9]/c11/VDD blk3[7|0]/c01/BLB VSUBS blk0[5|9]/c11/WL blk3[7|0]/c01/BL
++ blk3[7|0]/c11/BLB VSUBS sram_quad
+Xblk0[6|0] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|0]/c11/BL blk3[7|9]/c11/VDD blk3[7|0]/c01/BLB VSUBS blk0[6|9]/c11/WL blk3[7|0]/c01/BL
++ blk3[7|0]/c11/BLB VSUBS sram_quad
+Xblk0[7|0] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|0]/c11/BL blk3[7|9]/c11/VDD blk3[7|0]/c01/BLB VSUBS blk0[7|9]/c11/WL blk3[7|0]/c01/BL
++ blk3[7|0]/c11/BLB VSUBS sram_quad
+Xblk0[0|1] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|1]/c11/BL blk3[7|9]/c11/VDD blk3[7|1]/c01/BLB VSUBS blk0[0|9]/c11/WL blk3[7|1]/c01/BL
++ blk3[7|1]/c11/BLB VSUBS sram_quad
+Xblk0[1|1] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|1]/c11/BL blk3[7|9]/c11/VDD blk3[7|1]/c01/BLB VSUBS blk0[1|9]/c11/WL blk3[7|1]/c01/BL
++ blk3[7|1]/c11/BLB VSUBS sram_quad
+Xblk0[2|1] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|1]/c11/BL blk3[7|9]/c11/VDD blk3[7|1]/c01/BLB VSUBS blk0[2|9]/c11/WL blk3[7|1]/c01/BL
++ blk3[7|1]/c11/BLB VSUBS sram_quad
+Xblk0[3|1] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|1]/c11/BL blk3[7|9]/c11/VDD blk3[7|1]/c01/BLB VSUBS blk0[3|9]/c11/WL blk3[7|1]/c01/BL
++ blk3[7|1]/c11/BLB VSUBS sram_quad
+Xblk0[4|1] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|1]/c11/BL blk3[7|9]/c11/VDD blk3[7|1]/c01/BLB VSUBS blk0[4|9]/c11/WL blk3[7|1]/c01/BL
++ blk3[7|1]/c11/BLB VSUBS sram_quad
+Xblk0[5|1] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|1]/c11/BL blk3[7|9]/c11/VDD blk3[7|1]/c01/BLB VSUBS blk0[5|9]/c11/WL blk3[7|1]/c01/BL
++ blk3[7|1]/c11/BLB VSUBS sram_quad
+Xblk0[6|1] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|1]/c11/BL blk3[7|9]/c11/VDD blk3[7|1]/c01/BLB VSUBS blk0[6|9]/c11/WL blk3[7|1]/c01/BL
++ blk3[7|1]/c11/BLB VSUBS sram_quad
+Xblk0[7|1] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|1]/c11/BL blk3[7|9]/c11/VDD blk3[7|1]/c01/BLB VSUBS blk0[7|9]/c11/WL blk3[7|1]/c01/BL
++ blk3[7|1]/c11/BLB VSUBS sram_quad
+Xblk0[0|2] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|2]/c11/BL blk3[7|9]/c11/VDD blk3[7|2]/c01/BLB VSUBS blk0[0|9]/c11/WL blk3[7|2]/c01/BL
++ blk3[7|2]/c11/BLB VSUBS sram_quad
+Xblk0[1|2] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|2]/c11/BL blk3[7|9]/c11/VDD blk3[7|2]/c01/BLB VSUBS blk0[1|9]/c11/WL blk3[7|2]/c01/BL
++ blk3[7|2]/c11/BLB VSUBS sram_quad
+Xblk0[2|2] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|2]/c11/BL blk3[7|9]/c11/VDD blk3[7|2]/c01/BLB VSUBS blk0[2|9]/c11/WL blk3[7|2]/c01/BL
++ blk3[7|2]/c11/BLB VSUBS sram_quad
+Xblk0[3|2] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|2]/c11/BL blk3[7|9]/c11/VDD blk3[7|2]/c01/BLB VSUBS blk0[3|9]/c11/WL blk3[7|2]/c01/BL
++ blk3[7|2]/c11/BLB VSUBS sram_quad
+Xblk0[4|2] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|2]/c11/BL blk3[7|9]/c11/VDD blk3[7|2]/c01/BLB VSUBS blk0[4|9]/c11/WL blk3[7|2]/c01/BL
++ blk3[7|2]/c11/BLB VSUBS sram_quad
+Xblk0[5|2] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|2]/c11/BL blk3[7|9]/c11/VDD blk3[7|2]/c01/BLB VSUBS blk0[5|9]/c11/WL blk3[7|2]/c01/BL
++ blk3[7|2]/c11/BLB VSUBS sram_quad
+Xblk0[6|2] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|2]/c11/BL blk3[7|9]/c11/VDD blk3[7|2]/c01/BLB VSUBS blk0[6|9]/c11/WL blk3[7|2]/c01/BL
++ blk3[7|2]/c11/BLB VSUBS sram_quad
+Xblk0[7|2] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|2]/c11/BL blk3[7|9]/c11/VDD blk3[7|2]/c01/BLB VSUBS blk0[7|9]/c11/WL blk3[7|2]/c01/BL
++ blk3[7|2]/c11/BLB VSUBS sram_quad
+Xblk0[0|3] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|3]/c11/BL blk3[7|9]/c11/VDD blk3[7|3]/c01/BLB VSUBS blk0[0|9]/c11/WL blk3[7|3]/c01/BL
++ blk3[7|3]/c11/BLB VSUBS sram_quad
+Xblk0[1|3] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|3]/c11/BL blk3[7|9]/c11/VDD blk3[7|3]/c01/BLB VSUBS blk0[1|9]/c11/WL blk3[7|3]/c01/BL
++ blk3[7|3]/c11/BLB VSUBS sram_quad
+Xblk0[2|3] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|3]/c11/BL blk3[7|9]/c11/VDD blk3[7|3]/c01/BLB VSUBS blk0[2|9]/c11/WL blk3[7|3]/c01/BL
++ blk3[7|3]/c11/BLB VSUBS sram_quad
+Xblk0[3|3] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|3]/c11/BL blk3[7|9]/c11/VDD blk3[7|3]/c01/BLB VSUBS blk0[3|9]/c11/WL blk3[7|3]/c01/BL
++ blk3[7|3]/c11/BLB VSUBS sram_quad
+Xblk0[4|3] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|3]/c11/BL blk3[7|9]/c11/VDD blk3[7|3]/c01/BLB VSUBS blk0[4|9]/c11/WL blk3[7|3]/c01/BL
++ blk3[7|3]/c11/BLB VSUBS sram_quad
+Xblk0[5|3] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|3]/c11/BL blk3[7|9]/c11/VDD blk3[7|3]/c01/BLB VSUBS blk0[5|9]/c11/WL blk3[7|3]/c01/BL
++ blk3[7|3]/c11/BLB VSUBS sram_quad
+Xblk0[6|3] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|3]/c11/BL blk3[7|9]/c11/VDD blk3[7|3]/c01/BLB VSUBS blk0[6|9]/c11/WL blk3[7|3]/c01/BL
++ blk3[7|3]/c11/BLB VSUBS sram_quad
+Xblk0[7|3] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|3]/c11/BL blk3[7|9]/c11/VDD blk3[7|3]/c01/BLB VSUBS blk0[7|9]/c11/WL blk3[7|3]/c01/BL
++ blk3[7|3]/c11/BLB VSUBS sram_quad
+Xblk0[0|4] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|4]/c11/BL blk3[7|9]/c11/VDD blk3[7|4]/c01/BLB VSUBS blk0[0|9]/c11/WL blk3[7|4]/c01/BL
++ blk3[7|4]/c11/BLB VSUBS sram_quad
+Xblk0[1|4] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|4]/c11/BL blk3[7|9]/c11/VDD blk3[7|4]/c01/BLB VSUBS blk0[1|9]/c11/WL blk3[7|4]/c01/BL
++ blk3[7|4]/c11/BLB VSUBS sram_quad
+Xblk0[2|4] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|4]/c11/BL blk3[7|9]/c11/VDD blk3[7|4]/c01/BLB VSUBS blk0[2|9]/c11/WL blk3[7|4]/c01/BL
++ blk3[7|4]/c11/BLB VSUBS sram_quad
+Xblk0[3|4] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|4]/c11/BL blk3[7|9]/c11/VDD blk3[7|4]/c01/BLB VSUBS blk0[3|9]/c11/WL blk3[7|4]/c01/BL
++ blk3[7|4]/c11/BLB VSUBS sram_quad
+Xblk0[4|4] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|4]/c11/BL blk3[7|9]/c11/VDD blk3[7|4]/c01/BLB VSUBS blk0[4|9]/c11/WL blk3[7|4]/c01/BL
++ blk3[7|4]/c11/BLB VSUBS sram_quad
+Xblk0[5|4] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|4]/c11/BL blk3[7|9]/c11/VDD blk3[7|4]/c01/BLB VSUBS blk0[5|9]/c11/WL blk3[7|4]/c01/BL
++ blk3[7|4]/c11/BLB VSUBS sram_quad
+Xblk0[6|4] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|4]/c11/BL blk3[7|9]/c11/VDD blk3[7|4]/c01/BLB VSUBS blk0[6|9]/c11/WL blk3[7|4]/c01/BL
++ blk3[7|4]/c11/BLB VSUBS sram_quad
+Xblk0[7|4] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|4]/c11/BL blk3[7|9]/c11/VDD blk3[7|4]/c01/BLB VSUBS blk0[7|9]/c11/WL blk3[7|4]/c01/BL
++ blk3[7|4]/c11/BLB VSUBS sram_quad
+Xblk0[0|5] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|5]/c11/BL blk3[7|9]/c11/VDD blk3[7|5]/c01/BLB VSUBS blk0[0|9]/c11/WL blk3[7|5]/c01/BL
++ blk3[7|5]/c11/BLB VSUBS sram_quad
+Xblk0[1|5] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|5]/c11/BL blk3[7|9]/c11/VDD blk3[7|5]/c01/BLB VSUBS blk0[1|9]/c11/WL blk3[7|5]/c01/BL
++ blk3[7|5]/c11/BLB VSUBS sram_quad
+Xblk0[2|5] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|5]/c11/BL blk3[7|9]/c11/VDD blk3[7|5]/c01/BLB VSUBS blk0[2|9]/c11/WL blk3[7|5]/c01/BL
++ blk3[7|5]/c11/BLB VSUBS sram_quad
+Xblk0[3|5] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|5]/c11/BL blk3[7|9]/c11/VDD blk3[7|5]/c01/BLB VSUBS blk0[3|9]/c11/WL blk3[7|5]/c01/BL
++ blk3[7|5]/c11/BLB VSUBS sram_quad
+Xblk0[4|5] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|5]/c11/BL blk3[7|9]/c11/VDD blk3[7|5]/c01/BLB VSUBS blk0[4|9]/c11/WL blk3[7|5]/c01/BL
++ blk3[7|5]/c11/BLB VSUBS sram_quad
+Xblk0[5|5] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|5]/c11/BL blk3[7|9]/c11/VDD blk3[7|5]/c01/BLB VSUBS blk0[5|9]/c11/WL blk3[7|5]/c01/BL
++ blk3[7|5]/c11/BLB VSUBS sram_quad
+Xblk0[6|5] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|5]/c11/BL blk3[7|9]/c11/VDD blk3[7|5]/c01/BLB VSUBS blk0[6|9]/c11/WL blk3[7|5]/c01/BL
++ blk3[7|5]/c11/BLB VSUBS sram_quad
+Xblk0[7|5] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|5]/c11/BL blk3[7|9]/c11/VDD blk3[7|5]/c01/BLB VSUBS blk0[7|9]/c11/WL blk3[7|5]/c01/BL
++ blk3[7|5]/c11/BLB VSUBS sram_quad
+Xblk0[0|6] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|6]/c11/BL blk3[7|9]/c11/VDD blk3[7|6]/c01/BLB VSUBS blk0[0|9]/c11/WL blk3[7|6]/c01/BL
++ blk3[7|6]/c11/BLB VSUBS sram_quad
+Xblk0[1|6] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|6]/c11/BL blk3[7|9]/c11/VDD blk3[7|6]/c01/BLB VSUBS blk0[1|9]/c11/WL blk3[7|6]/c01/BL
++ blk3[7|6]/c11/BLB VSUBS sram_quad
+Xblk0[2|6] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|6]/c11/BL blk3[7|9]/c11/VDD blk3[7|6]/c01/BLB VSUBS blk0[2|9]/c11/WL blk3[7|6]/c01/BL
++ blk3[7|6]/c11/BLB VSUBS sram_quad
+Xblk0[3|6] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|6]/c11/BL blk3[7|9]/c11/VDD blk3[7|6]/c01/BLB VSUBS blk0[3|9]/c11/WL blk3[7|6]/c01/BL
++ blk3[7|6]/c11/BLB VSUBS sram_quad
+Xblk0[4|6] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|6]/c11/BL blk3[7|9]/c11/VDD blk3[7|6]/c01/BLB VSUBS blk0[4|9]/c11/WL blk3[7|6]/c01/BL
++ blk3[7|6]/c11/BLB VSUBS sram_quad
+Xblk0[5|6] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|6]/c11/BL blk3[7|9]/c11/VDD blk3[7|6]/c01/BLB VSUBS blk0[5|9]/c11/WL blk3[7|6]/c01/BL
++ blk3[7|6]/c11/BLB VSUBS sram_quad
+Xblk0[6|6] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|6]/c11/BL blk3[7|9]/c11/VDD blk3[7|6]/c01/BLB VSUBS blk0[6|9]/c11/WL blk3[7|6]/c01/BL
++ blk3[7|6]/c11/BLB VSUBS sram_quad
+Xblk0[7|6] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|6]/c11/BL blk3[7|9]/c11/VDD blk3[7|6]/c01/BLB VSUBS blk0[7|9]/c11/WL blk3[7|6]/c01/BL
++ blk3[7|6]/c11/BLB VSUBS sram_quad
+Xblk0[0|7] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|7]/c11/BL blk3[7|9]/c11/VDD blk3[7|7]/c01/BLB VSUBS blk0[0|9]/c11/WL blk3[7|7]/c01/BL
++ blk3[7|7]/c11/BLB VSUBS sram_quad
+Xblk0[1|7] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|7]/c11/BL blk3[7|9]/c11/VDD blk3[7|7]/c01/BLB VSUBS blk0[1|9]/c11/WL blk3[7|7]/c01/BL
++ blk3[7|7]/c11/BLB VSUBS sram_quad
+Xblk0[2|7] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|7]/c11/BL blk3[7|9]/c11/VDD blk3[7|7]/c01/BLB VSUBS blk0[2|9]/c11/WL blk3[7|7]/c01/BL
++ blk3[7|7]/c11/BLB VSUBS sram_quad
+Xblk0[3|7] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|7]/c11/BL blk3[7|9]/c11/VDD blk3[7|7]/c01/BLB VSUBS blk0[3|9]/c11/WL blk3[7|7]/c01/BL
++ blk3[7|7]/c11/BLB VSUBS sram_quad
+Xblk0[4|7] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|7]/c11/BL blk3[7|9]/c11/VDD blk3[7|7]/c01/BLB VSUBS blk0[4|9]/c11/WL blk3[7|7]/c01/BL
++ blk3[7|7]/c11/BLB VSUBS sram_quad
+Xblk0[5|7] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|7]/c11/BL blk3[7|9]/c11/VDD blk3[7|7]/c01/BLB VSUBS blk0[5|9]/c11/WL blk3[7|7]/c01/BL
++ blk3[7|7]/c11/BLB VSUBS sram_quad
+Xblk0[6|7] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|7]/c11/BL blk3[7|9]/c11/VDD blk3[7|7]/c01/BLB VSUBS blk0[6|9]/c11/WL blk3[7|7]/c01/BL
++ blk3[7|7]/c11/BLB VSUBS sram_quad
+Xblk0[7|7] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|7]/c11/BL blk3[7|9]/c11/VDD blk3[7|7]/c01/BLB VSUBS blk0[7|9]/c11/WL blk3[7|7]/c01/BL
++ blk3[7|7]/c11/BLB VSUBS sram_quad
+Xblk0[0|8] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|8]/c11/BL blk3[7|9]/c11/VDD blk3[7|8]/c01/BLB VSUBS blk0[0|9]/c11/WL blk3[7|8]/c01/BL
++ blk3[7|8]/c11/BLB VSUBS sram_quad
+Xblk0[1|8] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|8]/c11/BL blk3[7|9]/c11/VDD blk3[7|8]/c01/BLB VSUBS blk0[1|9]/c11/WL blk3[7|8]/c01/BL
++ blk3[7|8]/c11/BLB VSUBS sram_quad
+Xblk0[2|8] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|8]/c11/BL blk3[7|9]/c11/VDD blk3[7|8]/c01/BLB VSUBS blk0[2|9]/c11/WL blk3[7|8]/c01/BL
++ blk3[7|8]/c11/BLB VSUBS sram_quad
+Xblk0[3|8] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|8]/c11/BL blk3[7|9]/c11/VDD blk3[7|8]/c01/BLB VSUBS blk0[3|9]/c11/WL blk3[7|8]/c01/BL
++ blk3[7|8]/c11/BLB VSUBS sram_quad
+Xblk0[4|8] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|8]/c11/BL blk3[7|9]/c11/VDD blk3[7|8]/c01/BLB VSUBS blk0[4|9]/c11/WL blk3[7|8]/c01/BL
++ blk3[7|8]/c11/BLB VSUBS sram_quad
+Xblk0[5|8] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|8]/c11/BL blk3[7|9]/c11/VDD blk3[7|8]/c01/BLB VSUBS blk0[5|9]/c11/WL blk3[7|8]/c01/BL
++ blk3[7|8]/c11/BLB VSUBS sram_quad
+Xblk0[6|8] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|8]/c11/BL blk3[7|9]/c11/VDD blk3[7|8]/c01/BLB VSUBS blk0[6|9]/c11/WL blk3[7|8]/c01/BL
++ blk3[7|8]/c11/BLB VSUBS sram_quad
+Xblk0[7|8] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|8]/c11/BL blk3[7|9]/c11/VDD blk3[7|8]/c01/BLB VSUBS blk0[7|9]/c11/WL blk3[7|8]/c01/BL
++ blk3[7|8]/c11/BLB VSUBS sram_quad
+Xblk0[0|9] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|9]/c11/BL blk3[7|9]/c11/VDD blk3[7|9]/c01/BLB VSUBS blk0[0|9]/c11/WL blk3[7|9]/c01/BL
++ blk3[7|9]/c11/BLB VSUBS sram_quad
+Xblk0[1|9] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|9]/c11/BL blk3[7|9]/c11/VDD blk3[7|9]/c01/BLB VSUBS blk0[1|9]/c11/WL blk3[7|9]/c01/BL
++ blk3[7|9]/c11/BLB VSUBS sram_quad
+Xblk0[2|9] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|9]/c11/BL blk3[7|9]/c11/VDD blk3[7|9]/c01/BLB VSUBS blk0[2|9]/c11/WL blk3[7|9]/c01/BL
++ blk3[7|9]/c11/BLB VSUBS sram_quad
+Xblk0[3|9] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|9]/c11/BL blk3[7|9]/c11/VDD blk3[7|9]/c01/BLB VSUBS blk0[3|9]/c11/WL blk3[7|9]/c01/BL
++ blk3[7|9]/c11/BLB VSUBS sram_quad
+Xblk0[4|9] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|9]/c11/BL blk3[7|9]/c11/VDD blk3[7|9]/c01/BLB VSUBS blk0[4|9]/c11/WL blk3[7|9]/c01/BL
++ blk3[7|9]/c11/BLB VSUBS sram_quad
+Xblk0[5|9] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|9]/c11/BL blk3[7|9]/c11/VDD blk3[7|9]/c01/BLB VSUBS blk0[5|9]/c11/WL blk3[7|9]/c01/BL
++ blk3[7|9]/c11/BLB VSUBS sram_quad
+Xblk0[6|9] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|9]/c11/BL blk3[7|9]/c11/VDD blk3[7|9]/c01/BLB VSUBS blk0[6|9]/c11/WL blk3[7|9]/c01/BL
++ blk3[7|9]/c11/BLB VSUBS sram_quad
+Xblk0[7|9] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|9]/c11/BL blk3[7|9]/c11/VDD blk3[7|9]/c01/BLB VSUBS blk0[7|9]/c11/WL blk3[7|9]/c01/BL
++ blk3[7|9]/c11/BLB VSUBS sram_quad
+Xblk0[0|10] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|10]/c11/BL blk3[7|9]/c11/VDD blk3[7|10]/c01/BLB VSUBS blk0[0|9]/c11/WL blk3[7|10]/c01/BL
++ blk3[7|10]/c11/BLB VSUBS sram_quad
+Xblk0[1|10] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|10]/c11/BL blk3[7|9]/c11/VDD blk3[7|10]/c01/BLB VSUBS blk0[1|9]/c11/WL blk3[7|10]/c01/BL
++ blk3[7|10]/c11/BLB VSUBS sram_quad
+Xblk0[2|10] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|10]/c11/BL blk3[7|9]/c11/VDD blk3[7|10]/c01/BLB VSUBS blk0[2|9]/c11/WL blk3[7|10]/c01/BL
++ blk3[7|10]/c11/BLB VSUBS sram_quad
+Xblk0[3|10] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|10]/c11/BL blk3[7|9]/c11/VDD blk3[7|10]/c01/BLB VSUBS blk0[3|9]/c11/WL blk3[7|10]/c01/BL
++ blk3[7|10]/c11/BLB VSUBS sram_quad
+Xblk0[4|10] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|10]/c11/BL blk3[7|9]/c11/VDD blk3[7|10]/c01/BLB VSUBS blk0[4|9]/c11/WL blk3[7|10]/c01/BL
++ blk3[7|10]/c11/BLB VSUBS sram_quad
+Xblk0[5|10] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|10]/c11/BL blk3[7|9]/c11/VDD blk3[7|10]/c01/BLB VSUBS blk0[5|9]/c11/WL blk3[7|10]/c01/BL
++ blk3[7|10]/c11/BLB VSUBS sram_quad
+Xblk0[6|10] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|10]/c11/BL blk3[7|9]/c11/VDD blk3[7|10]/c01/BLB VSUBS blk0[6|9]/c11/WL blk3[7|10]/c01/BL
++ blk3[7|10]/c11/BLB VSUBS sram_quad
+Xblk0[7|10] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|10]/c11/BL blk3[7|9]/c11/VDD blk3[7|10]/c01/BLB VSUBS blk0[7|9]/c11/WL blk3[7|10]/c01/BL
++ blk3[7|10]/c11/BLB VSUBS sram_quad
+Xblk0[0|11] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|11]/c11/BL blk3[7|9]/c11/VDD blk3[7|11]/c01/BLB VSUBS blk0[0|9]/c11/WL blk3[7|11]/c01/BL
++ blk3[7|11]/c11/BLB VSUBS sram_quad
+Xblk0[1|11] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|11]/c11/BL blk3[7|9]/c11/VDD blk3[7|11]/c01/BLB VSUBS blk0[1|9]/c11/WL blk3[7|11]/c01/BL
++ blk3[7|11]/c11/BLB VSUBS sram_quad
+Xblk0[2|11] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|11]/c11/BL blk3[7|9]/c11/VDD blk3[7|11]/c01/BLB VSUBS blk0[2|9]/c11/WL blk3[7|11]/c01/BL
++ blk3[7|11]/c11/BLB VSUBS sram_quad
+Xblk0[3|11] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|11]/c11/BL blk3[7|9]/c11/VDD blk3[7|11]/c01/BLB VSUBS blk0[3|9]/c11/WL blk3[7|11]/c01/BL
++ blk3[7|11]/c11/BLB VSUBS sram_quad
+Xblk0[4|11] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|11]/c11/BL blk3[7|9]/c11/VDD blk3[7|11]/c01/BLB VSUBS blk0[4|9]/c11/WL blk3[7|11]/c01/BL
++ blk3[7|11]/c11/BLB VSUBS sram_quad
+Xblk0[5|11] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|11]/c11/BL blk3[7|9]/c11/VDD blk3[7|11]/c01/BLB VSUBS blk0[5|9]/c11/WL blk3[7|11]/c01/BL
++ blk3[7|11]/c11/BLB VSUBS sram_quad
+Xblk0[6|11] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|11]/c11/BL blk3[7|9]/c11/VDD blk3[7|11]/c01/BLB VSUBS blk0[6|9]/c11/WL blk3[7|11]/c01/BL
++ blk3[7|11]/c11/BLB VSUBS sram_quad
+Xblk0[7|11] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|11]/c11/BL blk3[7|9]/c11/VDD blk3[7|11]/c01/BLB VSUBS blk0[7|9]/c11/WL blk3[7|11]/c01/BL
++ blk3[7|11]/c11/BLB VSUBS sram_quad
+Xblk0[0|12] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|12]/c11/BL blk3[7|9]/c11/VDD blk3[7|12]/c01/BLB VSUBS blk0[0|9]/c11/WL blk3[7|12]/c01/BL
++ blk3[7|12]/c11/BLB VSUBS sram_quad
+Xblk0[1|12] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|12]/c11/BL blk3[7|9]/c11/VDD blk3[7|12]/c01/BLB VSUBS blk0[1|9]/c11/WL blk3[7|12]/c01/BL
++ blk3[7|12]/c11/BLB VSUBS sram_quad
+Xblk0[2|12] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|12]/c11/BL blk3[7|9]/c11/VDD blk3[7|12]/c01/BLB VSUBS blk0[2|9]/c11/WL blk3[7|12]/c01/BL
++ blk3[7|12]/c11/BLB VSUBS sram_quad
+Xblk0[3|12] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|12]/c11/BL blk3[7|9]/c11/VDD blk3[7|12]/c01/BLB VSUBS blk0[3|9]/c11/WL blk3[7|12]/c01/BL
++ blk3[7|12]/c11/BLB VSUBS sram_quad
+Xblk0[4|12] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|12]/c11/BL blk3[7|9]/c11/VDD blk3[7|12]/c01/BLB VSUBS blk0[4|9]/c11/WL blk3[7|12]/c01/BL
++ blk3[7|12]/c11/BLB VSUBS sram_quad
+Xblk0[5|12] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|12]/c11/BL blk3[7|9]/c11/VDD blk3[7|12]/c01/BLB VSUBS blk0[5|9]/c11/WL blk3[7|12]/c01/BL
++ blk3[7|12]/c11/BLB VSUBS sram_quad
+Xblk0[6|12] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|12]/c11/BL blk3[7|9]/c11/VDD blk3[7|12]/c01/BLB VSUBS blk0[6|9]/c11/WL blk3[7|12]/c01/BL
++ blk3[7|12]/c11/BLB VSUBS sram_quad
+Xblk0[7|12] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|12]/c11/BL blk3[7|9]/c11/VDD blk3[7|12]/c01/BLB VSUBS blk0[7|9]/c11/WL blk3[7|12]/c01/BL
++ blk3[7|12]/c11/BLB VSUBS sram_quad
+Xblk0[0|13] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|13]/c11/BL blk3[7|9]/c11/VDD blk3[7|13]/c01/BLB VSUBS blk0[0|9]/c11/WL blk3[7|13]/c01/BL
++ blk3[7|13]/c11/BLB VSUBS sram_quad
+Xblk0[1|13] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|13]/c11/BL blk3[7|9]/c11/VDD blk3[7|13]/c01/BLB VSUBS blk0[1|9]/c11/WL blk3[7|13]/c01/BL
++ blk3[7|13]/c11/BLB VSUBS sram_quad
+Xblk0[2|13] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|13]/c11/BL blk3[7|9]/c11/VDD blk3[7|13]/c01/BLB VSUBS blk0[2|9]/c11/WL blk3[7|13]/c01/BL
++ blk3[7|13]/c11/BLB VSUBS sram_quad
+Xblk0[3|13] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|13]/c11/BL blk3[7|9]/c11/VDD blk3[7|13]/c01/BLB VSUBS blk0[3|9]/c11/WL blk3[7|13]/c01/BL
++ blk3[7|13]/c11/BLB VSUBS sram_quad
+Xblk0[4|13] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|13]/c11/BL blk3[7|9]/c11/VDD blk3[7|13]/c01/BLB VSUBS blk0[4|9]/c11/WL blk3[7|13]/c01/BL
++ blk3[7|13]/c11/BLB VSUBS sram_quad
+Xblk0[5|13] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|13]/c11/BL blk3[7|9]/c11/VDD blk3[7|13]/c01/BLB VSUBS blk0[5|9]/c11/WL blk3[7|13]/c01/BL
++ blk3[7|13]/c11/BLB VSUBS sram_quad
+Xblk0[6|13] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|13]/c11/BL blk3[7|9]/c11/VDD blk3[7|13]/c01/BLB VSUBS blk0[6|9]/c11/WL blk3[7|13]/c01/BL
++ blk3[7|13]/c11/BLB VSUBS sram_quad
+Xblk0[7|13] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|13]/c11/BL blk3[7|9]/c11/VDD blk3[7|13]/c01/BLB VSUBS blk0[7|9]/c11/WL blk3[7|13]/c01/BL
++ blk3[7|13]/c11/BLB VSUBS sram_quad
+Xblk0[0|14] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|14]/c11/BL blk3[7|9]/c11/VDD blk3[7|14]/c01/BLB VSUBS blk0[0|9]/c11/WL blk3[7|14]/c01/BL
++ blk3[7|14]/c11/BLB VSUBS sram_quad
+Xblk0[1|14] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|14]/c11/BL blk3[7|9]/c11/VDD blk3[7|14]/c01/BLB VSUBS blk0[1|9]/c11/WL blk3[7|14]/c01/BL
++ blk3[7|14]/c11/BLB VSUBS sram_quad
+Xblk0[2|14] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|14]/c11/BL blk3[7|9]/c11/VDD blk3[7|14]/c01/BLB VSUBS blk0[2|9]/c11/WL blk3[7|14]/c01/BL
++ blk3[7|14]/c11/BLB VSUBS sram_quad
+Xblk0[3|14] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|14]/c11/BL blk3[7|9]/c11/VDD blk3[7|14]/c01/BLB VSUBS blk0[3|9]/c11/WL blk3[7|14]/c01/BL
++ blk3[7|14]/c11/BLB VSUBS sram_quad
+Xblk0[4|14] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|14]/c11/BL blk3[7|9]/c11/VDD blk3[7|14]/c01/BLB VSUBS blk0[4|9]/c11/WL blk3[7|14]/c01/BL
++ blk3[7|14]/c11/BLB VSUBS sram_quad
+Xblk0[5|14] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|14]/c11/BL blk3[7|9]/c11/VDD blk3[7|14]/c01/BLB VSUBS blk0[5|9]/c11/WL blk3[7|14]/c01/BL
++ blk3[7|14]/c11/BLB VSUBS sram_quad
+Xblk0[6|14] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|14]/c11/BL blk3[7|9]/c11/VDD blk3[7|14]/c01/BLB VSUBS blk0[6|9]/c11/WL blk3[7|14]/c01/BL
++ blk3[7|14]/c11/BLB VSUBS sram_quad
+Xblk0[7|14] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|14]/c11/BL blk3[7|9]/c11/VDD blk3[7|14]/c01/BLB VSUBS blk0[7|9]/c11/WL blk3[7|14]/c01/BL
++ blk3[7|14]/c11/BLB VSUBS sram_quad
+Xblk0[0|15] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|15]/c11/BL blk3[7|9]/c11/VDD blk3[7|15]/c01/BLB VSUBS blk0[0|9]/c11/WL blk3[7|15]/c01/BL
++ blk3[7|15]/c11/BLB VSUBS sram_quad
+Xblk0[1|15] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|15]/c11/BL blk3[7|9]/c11/VDD blk3[7|15]/c01/BLB VSUBS blk0[1|9]/c11/WL blk3[7|15]/c01/BL
++ blk3[7|15]/c11/BLB VSUBS sram_quad
+Xblk0[2|15] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|15]/c11/BL blk3[7|9]/c11/VDD blk3[7|15]/c01/BLB VSUBS blk0[2|9]/c11/WL blk3[7|15]/c01/BL
++ blk3[7|15]/c11/BLB VSUBS sram_quad
+Xblk0[3|15] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|15]/c11/BL blk3[7|9]/c11/VDD blk3[7|15]/c01/BLB VSUBS blk0[3|9]/c11/WL blk3[7|15]/c01/BL
++ blk3[7|15]/c11/BLB VSUBS sram_quad
+Xblk0[4|15] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|15]/c11/BL blk3[7|9]/c11/VDD blk3[7|15]/c01/BLB VSUBS blk0[4|9]/c11/WL blk3[7|15]/c01/BL
++ blk3[7|15]/c11/BLB VSUBS sram_quad
+Xblk0[5|15] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|15]/c11/BL blk3[7|9]/c11/VDD blk3[7|15]/c01/BLB VSUBS blk0[5|9]/c11/WL blk3[7|15]/c01/BL
++ blk3[7|15]/c11/BLB VSUBS sram_quad
+Xblk0[6|15] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|15]/c11/BL blk3[7|9]/c11/VDD blk3[7|15]/c01/BLB VSUBS blk0[6|9]/c11/WL blk3[7|15]/c01/BL
++ blk3[7|15]/c11/BLB VSUBS sram_quad
+Xblk0[7|15] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk0[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|15]/c11/BL blk3[7|9]/c11/VDD blk3[7|15]/c01/BLB VSUBS blk0[7|9]/c11/WL blk3[7|15]/c01/BL
++ blk3[7|15]/c11/BLB VSUBS sram_quad
+Xblk1[0|0] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|0]/c11/BL blk3[7|9]/c11/VDD blk3[7|0]/c01/BLB VSUBS blk1[0|9]/c11/WL blk3[7|0]/c01/BL
++ blk3[7|0]/c11/BLB VSUBS sram_quad
+Xblk1[1|0] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|0]/c11/BL blk3[7|9]/c11/VDD blk3[7|0]/c01/BLB VSUBS blk1[1|9]/c11/WL blk3[7|0]/c01/BL
++ blk3[7|0]/c11/BLB VSUBS sram_quad
+Xblk1[2|0] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|0]/c11/BL blk3[7|9]/c11/VDD blk3[7|0]/c01/BLB VSUBS blk1[2|9]/c11/WL blk3[7|0]/c01/BL
++ blk3[7|0]/c11/BLB VSUBS sram_quad
+Xblk1[3|0] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|0]/c11/BL blk3[7|9]/c11/VDD blk3[7|0]/c01/BLB VSUBS blk1[3|9]/c11/WL blk3[7|0]/c01/BL
++ blk3[7|0]/c11/BLB VSUBS sram_quad
+Xblk1[4|0] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|0]/c11/BL blk3[7|9]/c11/VDD blk3[7|0]/c01/BLB VSUBS blk1[4|9]/c11/WL blk3[7|0]/c01/BL
++ blk3[7|0]/c11/BLB VSUBS sram_quad
+Xblk1[5|0] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|0]/c11/BL blk3[7|9]/c11/VDD blk3[7|0]/c01/BLB VSUBS blk1[5|9]/c11/WL blk3[7|0]/c01/BL
++ blk3[7|0]/c11/BLB VSUBS sram_quad
+Xblk1[6|0] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|0]/c11/BL blk3[7|9]/c11/VDD blk3[7|0]/c01/BLB VSUBS blk1[6|9]/c11/WL blk3[7|0]/c01/BL
++ blk3[7|0]/c11/BLB VSUBS sram_quad
+Xblk1[7|0] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|0]/c11/BL blk3[7|9]/c11/VDD blk3[7|0]/c01/BLB VSUBS blk1[7|9]/c11/WL blk3[7|0]/c01/BL
++ blk3[7|0]/c11/BLB VSUBS sram_quad
+Xblk1[0|1] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|1]/c11/BL blk3[7|9]/c11/VDD blk3[7|1]/c01/BLB VSUBS blk1[0|9]/c11/WL blk3[7|1]/c01/BL
++ blk3[7|1]/c11/BLB VSUBS sram_quad
+Xblk1[1|1] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|1]/c11/BL blk3[7|9]/c11/VDD blk3[7|1]/c01/BLB VSUBS blk1[1|9]/c11/WL blk3[7|1]/c01/BL
++ blk3[7|1]/c11/BLB VSUBS sram_quad
+Xblk1[2|1] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|1]/c11/BL blk3[7|9]/c11/VDD blk3[7|1]/c01/BLB VSUBS blk1[2|9]/c11/WL blk3[7|1]/c01/BL
++ blk3[7|1]/c11/BLB VSUBS sram_quad
+Xblk1[3|1] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|1]/c11/BL blk3[7|9]/c11/VDD blk3[7|1]/c01/BLB VSUBS blk1[3|9]/c11/WL blk3[7|1]/c01/BL
++ blk3[7|1]/c11/BLB VSUBS sram_quad
+Xblk1[4|1] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|1]/c11/BL blk3[7|9]/c11/VDD blk3[7|1]/c01/BLB VSUBS blk1[4|9]/c11/WL blk3[7|1]/c01/BL
++ blk3[7|1]/c11/BLB VSUBS sram_quad
+Xblk1[5|1] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|1]/c11/BL blk3[7|9]/c11/VDD blk3[7|1]/c01/BLB VSUBS blk1[5|9]/c11/WL blk3[7|1]/c01/BL
++ blk3[7|1]/c11/BLB VSUBS sram_quad
+Xblk1[6|1] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|1]/c11/BL blk3[7|9]/c11/VDD blk3[7|1]/c01/BLB VSUBS blk1[6|9]/c11/WL blk3[7|1]/c01/BL
++ blk3[7|1]/c11/BLB VSUBS sram_quad
+Xblk1[7|1] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|1]/c11/BL blk3[7|9]/c11/VDD blk3[7|1]/c01/BLB VSUBS blk1[7|9]/c11/WL blk3[7|1]/c01/BL
++ blk3[7|1]/c11/BLB VSUBS sram_quad
+Xblk1[0|2] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|2]/c11/BL blk3[7|9]/c11/VDD blk3[7|2]/c01/BLB VSUBS blk1[0|9]/c11/WL blk3[7|2]/c01/BL
++ blk3[7|2]/c11/BLB VSUBS sram_quad
+Xblk1[1|2] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|2]/c11/BL blk3[7|9]/c11/VDD blk3[7|2]/c01/BLB VSUBS blk1[1|9]/c11/WL blk3[7|2]/c01/BL
++ blk3[7|2]/c11/BLB VSUBS sram_quad
+Xblk1[2|2] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|2]/c11/BL blk3[7|9]/c11/VDD blk3[7|2]/c01/BLB VSUBS blk1[2|9]/c11/WL blk3[7|2]/c01/BL
++ blk3[7|2]/c11/BLB VSUBS sram_quad
+Xblk1[3|2] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|2]/c11/BL blk3[7|9]/c11/VDD blk3[7|2]/c01/BLB VSUBS blk1[3|9]/c11/WL blk3[7|2]/c01/BL
++ blk3[7|2]/c11/BLB VSUBS sram_quad
+Xblk1[4|2] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|2]/c11/BL blk3[7|9]/c11/VDD blk3[7|2]/c01/BLB VSUBS blk1[4|9]/c11/WL blk3[7|2]/c01/BL
++ blk3[7|2]/c11/BLB VSUBS sram_quad
+Xblk1[5|2] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|2]/c11/BL blk3[7|9]/c11/VDD blk3[7|2]/c01/BLB VSUBS blk1[5|9]/c11/WL blk3[7|2]/c01/BL
++ blk3[7|2]/c11/BLB VSUBS sram_quad
+Xblk1[6|2] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|2]/c11/BL blk3[7|9]/c11/VDD blk3[7|2]/c01/BLB VSUBS blk1[6|9]/c11/WL blk3[7|2]/c01/BL
++ blk3[7|2]/c11/BLB VSUBS sram_quad
+Xblk1[7|2] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|2]/c11/BL blk3[7|9]/c11/VDD blk3[7|2]/c01/BLB VSUBS blk1[7|9]/c11/WL blk3[7|2]/c01/BL
++ blk3[7|2]/c11/BLB VSUBS sram_quad
+Xblk1[0|3] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|3]/c11/BL blk3[7|9]/c11/VDD blk3[7|3]/c01/BLB VSUBS blk1[0|9]/c11/WL blk3[7|3]/c01/BL
++ blk3[7|3]/c11/BLB VSUBS sram_quad
+Xblk1[1|3] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|3]/c11/BL blk3[7|9]/c11/VDD blk3[7|3]/c01/BLB VSUBS blk1[1|9]/c11/WL blk3[7|3]/c01/BL
++ blk3[7|3]/c11/BLB VSUBS sram_quad
+Xblk1[2|3] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|3]/c11/BL blk3[7|9]/c11/VDD blk3[7|3]/c01/BLB VSUBS blk1[2|9]/c11/WL blk3[7|3]/c01/BL
++ blk3[7|3]/c11/BLB VSUBS sram_quad
+Xblk1[3|3] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|3]/c11/BL blk3[7|9]/c11/VDD blk3[7|3]/c01/BLB VSUBS blk1[3|9]/c11/WL blk3[7|3]/c01/BL
++ blk3[7|3]/c11/BLB VSUBS sram_quad
+Xblk1[4|3] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|3]/c11/BL blk3[7|9]/c11/VDD blk3[7|3]/c01/BLB VSUBS blk1[4|9]/c11/WL blk3[7|3]/c01/BL
++ blk3[7|3]/c11/BLB VSUBS sram_quad
+Xblk1[5|3] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|3]/c11/BL blk3[7|9]/c11/VDD blk3[7|3]/c01/BLB VSUBS blk1[5|9]/c11/WL blk3[7|3]/c01/BL
++ blk3[7|3]/c11/BLB VSUBS sram_quad
+Xblk1[6|3] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|3]/c11/BL blk3[7|9]/c11/VDD blk3[7|3]/c01/BLB VSUBS blk1[6|9]/c11/WL blk3[7|3]/c01/BL
++ blk3[7|3]/c11/BLB VSUBS sram_quad
+Xblk1[7|3] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|3]/c11/BL blk3[7|9]/c11/VDD blk3[7|3]/c01/BLB VSUBS blk1[7|9]/c11/WL blk3[7|3]/c01/BL
++ blk3[7|3]/c11/BLB VSUBS sram_quad
+Xblk1[0|4] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|4]/c11/BL blk3[7|9]/c11/VDD blk3[7|4]/c01/BLB VSUBS blk1[0|9]/c11/WL blk3[7|4]/c01/BL
++ blk3[7|4]/c11/BLB VSUBS sram_quad
+Xblk1[1|4] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|4]/c11/BL blk3[7|9]/c11/VDD blk3[7|4]/c01/BLB VSUBS blk1[1|9]/c11/WL blk3[7|4]/c01/BL
++ blk3[7|4]/c11/BLB VSUBS sram_quad
+Xblk1[2|4] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|4]/c11/BL blk3[7|9]/c11/VDD blk3[7|4]/c01/BLB VSUBS blk1[2|9]/c11/WL blk3[7|4]/c01/BL
++ blk3[7|4]/c11/BLB VSUBS sram_quad
+Xblk1[3|4] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|4]/c11/BL blk3[7|9]/c11/VDD blk3[7|4]/c01/BLB VSUBS blk1[3|9]/c11/WL blk3[7|4]/c01/BL
++ blk3[7|4]/c11/BLB VSUBS sram_quad
+Xblk1[4|4] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|4]/c11/BL blk3[7|9]/c11/VDD blk3[7|4]/c01/BLB VSUBS blk1[4|9]/c11/WL blk3[7|4]/c01/BL
++ blk3[7|4]/c11/BLB VSUBS sram_quad
+Xblk1[5|4] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|4]/c11/BL blk3[7|9]/c11/VDD blk3[7|4]/c01/BLB VSUBS blk1[5|9]/c11/WL blk3[7|4]/c01/BL
++ blk3[7|4]/c11/BLB VSUBS sram_quad
+Xblk1[6|4] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|4]/c11/BL blk3[7|9]/c11/VDD blk3[7|4]/c01/BLB VSUBS blk1[6|9]/c11/WL blk3[7|4]/c01/BL
++ blk3[7|4]/c11/BLB VSUBS sram_quad
+Xblk1[7|4] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|4]/c11/BL blk3[7|9]/c11/VDD blk3[7|4]/c01/BLB VSUBS blk1[7|9]/c11/WL blk3[7|4]/c01/BL
++ blk3[7|4]/c11/BLB VSUBS sram_quad
+Xblk1[0|5] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|5]/c11/BL blk3[7|9]/c11/VDD blk3[7|5]/c01/BLB VSUBS blk1[0|9]/c11/WL blk3[7|5]/c01/BL
++ blk3[7|5]/c11/BLB VSUBS sram_quad
+Xblk1[1|5] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|5]/c11/BL blk3[7|9]/c11/VDD blk3[7|5]/c01/BLB VSUBS blk1[1|9]/c11/WL blk3[7|5]/c01/BL
++ blk3[7|5]/c11/BLB VSUBS sram_quad
+Xblk1[2|5] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|5]/c11/BL blk3[7|9]/c11/VDD blk3[7|5]/c01/BLB VSUBS blk1[2|9]/c11/WL blk3[7|5]/c01/BL
++ blk3[7|5]/c11/BLB VSUBS sram_quad
+Xblk1[3|5] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|5]/c11/BL blk3[7|9]/c11/VDD blk3[7|5]/c01/BLB VSUBS blk1[3|9]/c11/WL blk3[7|5]/c01/BL
++ blk3[7|5]/c11/BLB VSUBS sram_quad
+Xblk1[4|5] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|5]/c11/BL blk3[7|9]/c11/VDD blk3[7|5]/c01/BLB VSUBS blk1[4|9]/c11/WL blk3[7|5]/c01/BL
++ blk3[7|5]/c11/BLB VSUBS sram_quad
+Xblk1[5|5] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|5]/c11/BL blk3[7|9]/c11/VDD blk3[7|5]/c01/BLB VSUBS blk1[5|9]/c11/WL blk3[7|5]/c01/BL
++ blk3[7|5]/c11/BLB VSUBS sram_quad
+Xblk1[6|5] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|5]/c11/BL blk3[7|9]/c11/VDD blk3[7|5]/c01/BLB VSUBS blk1[6|9]/c11/WL blk3[7|5]/c01/BL
++ blk3[7|5]/c11/BLB VSUBS sram_quad
+Xblk1[7|5] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|5]/c11/BL blk3[7|9]/c11/VDD blk3[7|5]/c01/BLB VSUBS blk1[7|9]/c11/WL blk3[7|5]/c01/BL
++ blk3[7|5]/c11/BLB VSUBS sram_quad
+Xblk1[0|6] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|6]/c11/BL blk3[7|9]/c11/VDD blk3[7|6]/c01/BLB VSUBS blk1[0|9]/c11/WL blk3[7|6]/c01/BL
++ blk3[7|6]/c11/BLB VSUBS sram_quad
+Xblk1[1|6] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|6]/c11/BL blk3[7|9]/c11/VDD blk3[7|6]/c01/BLB VSUBS blk1[1|9]/c11/WL blk3[7|6]/c01/BL
++ blk3[7|6]/c11/BLB VSUBS sram_quad
+Xblk1[2|6] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|6]/c11/BL blk3[7|9]/c11/VDD blk3[7|6]/c01/BLB VSUBS blk1[2|9]/c11/WL blk3[7|6]/c01/BL
++ blk3[7|6]/c11/BLB VSUBS sram_quad
+Xblk1[3|6] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|6]/c11/BL blk3[7|9]/c11/VDD blk3[7|6]/c01/BLB VSUBS blk1[3|9]/c11/WL blk3[7|6]/c01/BL
++ blk3[7|6]/c11/BLB VSUBS sram_quad
+Xblk1[4|6] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|6]/c11/BL blk3[7|9]/c11/VDD blk3[7|6]/c01/BLB VSUBS blk1[4|9]/c11/WL blk3[7|6]/c01/BL
++ blk3[7|6]/c11/BLB VSUBS sram_quad
+Xblk1[5|6] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|6]/c11/BL blk3[7|9]/c11/VDD blk3[7|6]/c01/BLB VSUBS blk1[5|9]/c11/WL blk3[7|6]/c01/BL
++ blk3[7|6]/c11/BLB VSUBS sram_quad
+Xblk1[6|6] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|6]/c11/BL blk3[7|9]/c11/VDD blk3[7|6]/c01/BLB VSUBS blk1[6|9]/c11/WL blk3[7|6]/c01/BL
++ blk3[7|6]/c11/BLB VSUBS sram_quad
+Xblk1[7|6] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|6]/c11/BL blk3[7|9]/c11/VDD blk3[7|6]/c01/BLB VSUBS blk1[7|9]/c11/WL blk3[7|6]/c01/BL
++ blk3[7|6]/c11/BLB VSUBS sram_quad
+Xblk1[0|7] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|7]/c11/BL blk3[7|9]/c11/VDD blk3[7|7]/c01/BLB VSUBS blk1[0|9]/c11/WL blk3[7|7]/c01/BL
++ blk3[7|7]/c11/BLB VSUBS sram_quad
+Xblk1[1|7] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|7]/c11/BL blk3[7|9]/c11/VDD blk3[7|7]/c01/BLB VSUBS blk1[1|9]/c11/WL blk3[7|7]/c01/BL
++ blk3[7|7]/c11/BLB VSUBS sram_quad
+Xblk1[2|7] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|7]/c11/BL blk3[7|9]/c11/VDD blk3[7|7]/c01/BLB VSUBS blk1[2|9]/c11/WL blk3[7|7]/c01/BL
++ blk3[7|7]/c11/BLB VSUBS sram_quad
+Xblk1[3|7] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|7]/c11/BL blk3[7|9]/c11/VDD blk3[7|7]/c01/BLB VSUBS blk1[3|9]/c11/WL blk3[7|7]/c01/BL
++ blk3[7|7]/c11/BLB VSUBS sram_quad
+Xblk1[4|7] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|7]/c11/BL blk3[7|9]/c11/VDD blk3[7|7]/c01/BLB VSUBS blk1[4|9]/c11/WL blk3[7|7]/c01/BL
++ blk3[7|7]/c11/BLB VSUBS sram_quad
+Xblk1[5|7] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|7]/c11/BL blk3[7|9]/c11/VDD blk3[7|7]/c01/BLB VSUBS blk1[5|9]/c11/WL blk3[7|7]/c01/BL
++ blk3[7|7]/c11/BLB VSUBS sram_quad
+Xblk1[6|7] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|7]/c11/BL blk3[7|9]/c11/VDD blk3[7|7]/c01/BLB VSUBS blk1[6|9]/c11/WL blk3[7|7]/c01/BL
++ blk3[7|7]/c11/BLB VSUBS sram_quad
+Xblk1[7|7] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|7]/c11/BL blk3[7|9]/c11/VDD blk3[7|7]/c01/BLB VSUBS blk1[7|9]/c11/WL blk3[7|7]/c01/BL
++ blk3[7|7]/c11/BLB VSUBS sram_quad
+Xblk1[0|8] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|8]/c11/BL blk3[7|9]/c11/VDD blk3[7|8]/c01/BLB VSUBS blk1[0|9]/c11/WL blk3[7|8]/c01/BL
++ blk3[7|8]/c11/BLB VSUBS sram_quad
+Xblk1[1|8] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|8]/c11/BL blk3[7|9]/c11/VDD blk3[7|8]/c01/BLB VSUBS blk1[1|9]/c11/WL blk3[7|8]/c01/BL
++ blk3[7|8]/c11/BLB VSUBS sram_quad
+Xblk1[2|8] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|8]/c11/BL blk3[7|9]/c11/VDD blk3[7|8]/c01/BLB VSUBS blk1[2|9]/c11/WL blk3[7|8]/c01/BL
++ blk3[7|8]/c11/BLB VSUBS sram_quad
+Xblk1[3|8] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|8]/c11/BL blk3[7|9]/c11/VDD blk3[7|8]/c01/BLB VSUBS blk1[3|9]/c11/WL blk3[7|8]/c01/BL
++ blk3[7|8]/c11/BLB VSUBS sram_quad
+Xblk1[4|8] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|8]/c11/BL blk3[7|9]/c11/VDD blk3[7|8]/c01/BLB VSUBS blk1[4|9]/c11/WL blk3[7|8]/c01/BL
++ blk3[7|8]/c11/BLB VSUBS sram_quad
+Xblk1[5|8] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|8]/c11/BL blk3[7|9]/c11/VDD blk3[7|8]/c01/BLB VSUBS blk1[5|9]/c11/WL blk3[7|8]/c01/BL
++ blk3[7|8]/c11/BLB VSUBS sram_quad
+Xblk1[6|8] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|8]/c11/BL blk3[7|9]/c11/VDD blk3[7|8]/c01/BLB VSUBS blk1[6|9]/c11/WL blk3[7|8]/c01/BL
++ blk3[7|8]/c11/BLB VSUBS sram_quad
+Xblk1[7|8] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|8]/c11/BL blk3[7|9]/c11/VDD blk3[7|8]/c01/BLB VSUBS blk1[7|9]/c11/WL blk3[7|8]/c01/BL
++ blk3[7|8]/c11/BLB VSUBS sram_quad
+Xblk1[0|9] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|9]/c11/BL blk3[7|9]/c11/VDD blk3[7|9]/c01/BLB VSUBS blk1[0|9]/c11/WL blk3[7|9]/c01/BL
++ blk3[7|9]/c11/BLB VSUBS sram_quad
+Xblk1[1|9] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|9]/c11/BL blk3[7|9]/c11/VDD blk3[7|9]/c01/BLB VSUBS blk1[1|9]/c11/WL blk3[7|9]/c01/BL
++ blk3[7|9]/c11/BLB VSUBS sram_quad
+Xblk1[2|9] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|9]/c11/BL blk3[7|9]/c11/VDD blk3[7|9]/c01/BLB VSUBS blk1[2|9]/c11/WL blk3[7|9]/c01/BL
++ blk3[7|9]/c11/BLB VSUBS sram_quad
+Xblk1[3|9] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|9]/c11/BL blk3[7|9]/c11/VDD blk3[7|9]/c01/BLB VSUBS blk1[3|9]/c11/WL blk3[7|9]/c01/BL
++ blk3[7|9]/c11/BLB VSUBS sram_quad
+Xblk1[4|9] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|9]/c11/BL blk3[7|9]/c11/VDD blk3[7|9]/c01/BLB VSUBS blk1[4|9]/c11/WL blk3[7|9]/c01/BL
++ blk3[7|9]/c11/BLB VSUBS sram_quad
+Xblk1[5|9] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|9]/c11/BL blk3[7|9]/c11/VDD blk3[7|9]/c01/BLB VSUBS blk1[5|9]/c11/WL blk3[7|9]/c01/BL
++ blk3[7|9]/c11/BLB VSUBS sram_quad
+Xblk1[6|9] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|9]/c11/BL blk3[7|9]/c11/VDD blk3[7|9]/c01/BLB VSUBS blk1[6|9]/c11/WL blk3[7|9]/c01/BL
++ blk3[7|9]/c11/BLB VSUBS sram_quad
+Xblk1[7|9] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|9]/c11/BL blk3[7|9]/c11/VDD blk3[7|9]/c01/BLB VSUBS blk1[7|9]/c11/WL blk3[7|9]/c01/BL
++ blk3[7|9]/c11/BLB VSUBS sram_quad
+Xblk1[0|10] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|10]/c11/BL blk3[7|9]/c11/VDD blk3[7|10]/c01/BLB VSUBS blk1[0|9]/c11/WL blk3[7|10]/c01/BL
++ blk3[7|10]/c11/BLB VSUBS sram_quad
+Xblk1[1|10] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|10]/c11/BL blk3[7|9]/c11/VDD blk3[7|10]/c01/BLB VSUBS blk1[1|9]/c11/WL blk3[7|10]/c01/BL
++ blk3[7|10]/c11/BLB VSUBS sram_quad
+Xblk1[2|10] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|10]/c11/BL blk3[7|9]/c11/VDD blk3[7|10]/c01/BLB VSUBS blk1[2|9]/c11/WL blk3[7|10]/c01/BL
++ blk3[7|10]/c11/BLB VSUBS sram_quad
+Xblk1[3|10] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|10]/c11/BL blk3[7|9]/c11/VDD blk3[7|10]/c01/BLB VSUBS blk1[3|9]/c11/WL blk3[7|10]/c01/BL
++ blk3[7|10]/c11/BLB VSUBS sram_quad
+Xblk1[4|10] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|10]/c11/BL blk3[7|9]/c11/VDD blk3[7|10]/c01/BLB VSUBS blk1[4|9]/c11/WL blk3[7|10]/c01/BL
++ blk3[7|10]/c11/BLB VSUBS sram_quad
+Xblk1[5|10] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|10]/c11/BL blk3[7|9]/c11/VDD blk3[7|10]/c01/BLB VSUBS blk1[5|9]/c11/WL blk3[7|10]/c01/BL
++ blk3[7|10]/c11/BLB VSUBS sram_quad
+Xblk1[6|10] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|10]/c11/BL blk3[7|9]/c11/VDD blk3[7|10]/c01/BLB VSUBS blk1[6|9]/c11/WL blk3[7|10]/c01/BL
++ blk3[7|10]/c11/BLB VSUBS sram_quad
+Xblk1[7|10] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|10]/c11/BL blk3[7|9]/c11/VDD blk3[7|10]/c01/BLB VSUBS blk1[7|9]/c11/WL blk3[7|10]/c01/BL
++ blk3[7|10]/c11/BLB VSUBS sram_quad
+Xblk1[0|11] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|11]/c11/BL blk3[7|9]/c11/VDD blk3[7|11]/c01/BLB VSUBS blk1[0|9]/c11/WL blk3[7|11]/c01/BL
++ blk3[7|11]/c11/BLB VSUBS sram_quad
+Xblk1[1|11] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|11]/c11/BL blk3[7|9]/c11/VDD blk3[7|11]/c01/BLB VSUBS blk1[1|9]/c11/WL blk3[7|11]/c01/BL
++ blk3[7|11]/c11/BLB VSUBS sram_quad
+Xblk1[2|11] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|11]/c11/BL blk3[7|9]/c11/VDD blk3[7|11]/c01/BLB VSUBS blk1[2|9]/c11/WL blk3[7|11]/c01/BL
++ blk3[7|11]/c11/BLB VSUBS sram_quad
+Xblk1[3|11] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|11]/c11/BL blk3[7|9]/c11/VDD blk3[7|11]/c01/BLB VSUBS blk1[3|9]/c11/WL blk3[7|11]/c01/BL
++ blk3[7|11]/c11/BLB VSUBS sram_quad
+Xblk1[4|11] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|11]/c11/BL blk3[7|9]/c11/VDD blk3[7|11]/c01/BLB VSUBS blk1[4|9]/c11/WL blk3[7|11]/c01/BL
++ blk3[7|11]/c11/BLB VSUBS sram_quad
+Xblk1[5|11] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|11]/c11/BL blk3[7|9]/c11/VDD blk3[7|11]/c01/BLB VSUBS blk1[5|9]/c11/WL blk3[7|11]/c01/BL
++ blk3[7|11]/c11/BLB VSUBS sram_quad
+Xblk1[6|11] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|11]/c11/BL blk3[7|9]/c11/VDD blk3[7|11]/c01/BLB VSUBS blk1[6|9]/c11/WL blk3[7|11]/c01/BL
++ blk3[7|11]/c11/BLB VSUBS sram_quad
+Xblk1[7|11] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|11]/c11/BL blk3[7|9]/c11/VDD blk3[7|11]/c01/BLB VSUBS blk1[7|9]/c11/WL blk3[7|11]/c01/BL
++ blk3[7|11]/c11/BLB VSUBS sram_quad
+Xblk1[0|12] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|12]/c11/BL blk3[7|9]/c11/VDD blk3[7|12]/c01/BLB VSUBS blk1[0|9]/c11/WL blk3[7|12]/c01/BL
++ blk3[7|12]/c11/BLB VSUBS sram_quad
+Xblk1[1|12] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|12]/c11/BL blk3[7|9]/c11/VDD blk3[7|12]/c01/BLB VSUBS blk1[1|9]/c11/WL blk3[7|12]/c01/BL
++ blk3[7|12]/c11/BLB VSUBS sram_quad
+Xblk1[2|12] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|12]/c11/BL blk3[7|9]/c11/VDD blk3[7|12]/c01/BLB VSUBS blk1[2|9]/c11/WL blk3[7|12]/c01/BL
++ blk3[7|12]/c11/BLB VSUBS sram_quad
+Xblk1[3|12] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|12]/c11/BL blk3[7|9]/c11/VDD blk3[7|12]/c01/BLB VSUBS blk1[3|9]/c11/WL blk3[7|12]/c01/BL
++ blk3[7|12]/c11/BLB VSUBS sram_quad
+Xblk1[4|12] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|12]/c11/BL blk3[7|9]/c11/VDD blk3[7|12]/c01/BLB VSUBS blk1[4|9]/c11/WL blk3[7|12]/c01/BL
++ blk3[7|12]/c11/BLB VSUBS sram_quad
+Xblk1[5|12] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|12]/c11/BL blk3[7|9]/c11/VDD blk3[7|12]/c01/BLB VSUBS blk1[5|9]/c11/WL blk3[7|12]/c01/BL
++ blk3[7|12]/c11/BLB VSUBS sram_quad
+Xblk1[6|12] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|12]/c11/BL blk3[7|9]/c11/VDD blk3[7|12]/c01/BLB VSUBS blk1[6|9]/c11/WL blk3[7|12]/c01/BL
++ blk3[7|12]/c11/BLB VSUBS sram_quad
+Xblk1[7|12] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|12]/c11/BL blk3[7|9]/c11/VDD blk3[7|12]/c01/BLB VSUBS blk1[7|9]/c11/WL blk3[7|12]/c01/BL
++ blk3[7|12]/c11/BLB VSUBS sram_quad
+Xblk1[0|13] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|13]/c11/BL blk3[7|9]/c11/VDD blk3[7|13]/c01/BLB VSUBS blk1[0|9]/c11/WL blk3[7|13]/c01/BL
++ blk3[7|13]/c11/BLB VSUBS sram_quad
+Xblk1[1|13] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|13]/c11/BL blk3[7|9]/c11/VDD blk3[7|13]/c01/BLB VSUBS blk1[1|9]/c11/WL blk3[7|13]/c01/BL
++ blk3[7|13]/c11/BLB VSUBS sram_quad
+Xblk1[2|13] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|13]/c11/BL blk3[7|9]/c11/VDD blk3[7|13]/c01/BLB VSUBS blk1[2|9]/c11/WL blk3[7|13]/c01/BL
++ blk3[7|13]/c11/BLB VSUBS sram_quad
+Xblk1[3|13] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|13]/c11/BL blk3[7|9]/c11/VDD blk3[7|13]/c01/BLB VSUBS blk1[3|9]/c11/WL blk3[7|13]/c01/BL
++ blk3[7|13]/c11/BLB VSUBS sram_quad
+Xblk1[4|13] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|13]/c11/BL blk3[7|9]/c11/VDD blk3[7|13]/c01/BLB VSUBS blk1[4|9]/c11/WL blk3[7|13]/c01/BL
++ blk3[7|13]/c11/BLB VSUBS sram_quad
+Xblk1[5|13] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|13]/c11/BL blk3[7|9]/c11/VDD blk3[7|13]/c01/BLB VSUBS blk1[5|9]/c11/WL blk3[7|13]/c01/BL
++ blk3[7|13]/c11/BLB VSUBS sram_quad
+Xblk1[6|13] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|13]/c11/BL blk3[7|9]/c11/VDD blk3[7|13]/c01/BLB VSUBS blk1[6|9]/c11/WL blk3[7|13]/c01/BL
++ blk3[7|13]/c11/BLB VSUBS sram_quad
+Xblk1[7|13] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|13]/c11/BL blk3[7|9]/c11/VDD blk3[7|13]/c01/BLB VSUBS blk1[7|9]/c11/WL blk3[7|13]/c01/BL
++ blk3[7|13]/c11/BLB VSUBS sram_quad
+Xblk1[0|14] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|14]/c11/BL blk3[7|9]/c11/VDD blk3[7|14]/c01/BLB VSUBS blk1[0|9]/c11/WL blk3[7|14]/c01/BL
++ blk3[7|14]/c11/BLB VSUBS sram_quad
+Xblk1[1|14] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|14]/c11/BL blk3[7|9]/c11/VDD blk3[7|14]/c01/BLB VSUBS blk1[1|9]/c11/WL blk3[7|14]/c01/BL
++ blk3[7|14]/c11/BLB VSUBS sram_quad
+Xblk1[2|14] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|14]/c11/BL blk3[7|9]/c11/VDD blk3[7|14]/c01/BLB VSUBS blk1[2|9]/c11/WL blk3[7|14]/c01/BL
++ blk3[7|14]/c11/BLB VSUBS sram_quad
+Xblk1[3|14] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|14]/c11/BL blk3[7|9]/c11/VDD blk3[7|14]/c01/BLB VSUBS blk1[3|9]/c11/WL blk3[7|14]/c01/BL
++ blk3[7|14]/c11/BLB VSUBS sram_quad
+Xblk1[4|14] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|14]/c11/BL blk3[7|9]/c11/VDD blk3[7|14]/c01/BLB VSUBS blk1[4|9]/c11/WL blk3[7|14]/c01/BL
++ blk3[7|14]/c11/BLB VSUBS sram_quad
+Xblk1[5|14] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|14]/c11/BL blk3[7|9]/c11/VDD blk3[7|14]/c01/BLB VSUBS blk1[5|9]/c11/WL blk3[7|14]/c01/BL
++ blk3[7|14]/c11/BLB VSUBS sram_quad
+Xblk1[6|14] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|14]/c11/BL blk3[7|9]/c11/VDD blk3[7|14]/c01/BLB VSUBS blk1[6|9]/c11/WL blk3[7|14]/c01/BL
++ blk3[7|14]/c11/BLB VSUBS sram_quad
+Xblk1[7|14] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|14]/c11/BL blk3[7|9]/c11/VDD blk3[7|14]/c01/BLB VSUBS blk1[7|9]/c11/WL blk3[7|14]/c01/BL
++ blk3[7|14]/c11/BLB VSUBS sram_quad
+Xblk1[0|15] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|15]/c11/BL blk3[7|9]/c11/VDD blk3[7|15]/c01/BLB VSUBS blk1[0|9]/c11/WL blk3[7|15]/c01/BL
++ blk3[7|15]/c11/BLB VSUBS sram_quad
+Xblk1[1|15] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|15]/c11/BL blk3[7|9]/c11/VDD blk3[7|15]/c01/BLB VSUBS blk1[1|9]/c11/WL blk3[7|15]/c01/BL
++ blk3[7|15]/c11/BLB VSUBS sram_quad
+Xblk1[2|15] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|15]/c11/BL blk3[7|9]/c11/VDD blk3[7|15]/c01/BLB VSUBS blk1[2|9]/c11/WL blk3[7|15]/c01/BL
++ blk3[7|15]/c11/BLB VSUBS sram_quad
+Xblk1[3|15] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|15]/c11/BL blk3[7|9]/c11/VDD blk3[7|15]/c01/BLB VSUBS blk1[3|9]/c11/WL blk3[7|15]/c01/BL
++ blk3[7|15]/c11/BLB VSUBS sram_quad
+Xblk1[4|15] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|15]/c11/BL blk3[7|9]/c11/VDD blk3[7|15]/c01/BLB VSUBS blk1[4|9]/c11/WL blk3[7|15]/c01/BL
++ blk3[7|15]/c11/BLB VSUBS sram_quad
+Xblk1[5|15] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|15]/c11/BL blk3[7|9]/c11/VDD blk3[7|15]/c01/BLB VSUBS blk1[5|9]/c11/WL blk3[7|15]/c01/BL
++ blk3[7|15]/c11/BLB VSUBS sram_quad
+Xblk1[6|15] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|15]/c11/BL blk3[7|9]/c11/VDD blk3[7|15]/c01/BLB VSUBS blk1[6|9]/c11/WL blk3[7|15]/c01/BL
++ blk3[7|15]/c11/BLB VSUBS sram_quad
+Xblk1[7|15] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk1[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|15]/c11/BL blk3[7|9]/c11/VDD blk3[7|15]/c01/BLB VSUBS blk1[7|9]/c11/WL blk3[7|15]/c01/BL
++ blk3[7|15]/c11/BLB VSUBS sram_quad
+Xblk2[0|0] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|0]/c11/BL blk3[7|9]/c11/VDD blk3[7|0]/c01/BLB VSUBS blk2[0|9]/c11/WL blk3[7|0]/c01/BL
++ blk3[7|0]/c11/BLB VSUBS sram_quad
+Xblk2[1|0] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|0]/c11/BL blk3[7|9]/c11/VDD blk3[7|0]/c01/BLB VSUBS blk2[1|9]/c11/WL blk3[7|0]/c01/BL
++ blk3[7|0]/c11/BLB VSUBS sram_quad
+Xblk2[2|0] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|0]/c11/BL blk3[7|9]/c11/VDD blk3[7|0]/c01/BLB VSUBS blk2[2|9]/c11/WL blk3[7|0]/c01/BL
++ blk3[7|0]/c11/BLB VSUBS sram_quad
+Xblk2[3|0] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|0]/c11/BL blk3[7|9]/c11/VDD blk3[7|0]/c01/BLB VSUBS blk2[3|9]/c11/WL blk3[7|0]/c01/BL
++ blk3[7|0]/c11/BLB VSUBS sram_quad
+Xblk2[4|0] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|0]/c11/BL blk3[7|9]/c11/VDD blk3[7|0]/c01/BLB VSUBS blk2[4|9]/c11/WL blk3[7|0]/c01/BL
++ blk3[7|0]/c11/BLB VSUBS sram_quad
+Xblk2[5|0] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|0]/c11/BL blk3[7|9]/c11/VDD blk3[7|0]/c01/BLB VSUBS blk2[5|9]/c11/WL blk3[7|0]/c01/BL
++ blk3[7|0]/c11/BLB VSUBS sram_quad
+Xblk2[6|0] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|0]/c11/BL blk3[7|9]/c11/VDD blk3[7|0]/c01/BLB VSUBS blk2[6|9]/c11/WL blk3[7|0]/c01/BL
++ blk3[7|0]/c11/BLB VSUBS sram_quad
+Xblk2[7|0] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|0]/c11/BL blk3[7|9]/c11/VDD blk3[7|0]/c01/BLB VSUBS blk2[7|9]/c11/WL blk3[7|0]/c01/BL
++ blk3[7|0]/c11/BLB VSUBS sram_quad
+Xblk2[0|1] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|1]/c11/BL blk3[7|9]/c11/VDD blk3[7|1]/c01/BLB VSUBS blk2[0|9]/c11/WL blk3[7|1]/c01/BL
++ blk3[7|1]/c11/BLB VSUBS sram_quad
+Xblk2[1|1] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|1]/c11/BL blk3[7|9]/c11/VDD blk3[7|1]/c01/BLB VSUBS blk2[1|9]/c11/WL blk3[7|1]/c01/BL
++ blk3[7|1]/c11/BLB VSUBS sram_quad
+Xblk2[2|1] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|1]/c11/BL blk3[7|9]/c11/VDD blk3[7|1]/c01/BLB VSUBS blk2[2|9]/c11/WL blk3[7|1]/c01/BL
++ blk3[7|1]/c11/BLB VSUBS sram_quad
+Xblk2[3|1] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|1]/c11/BL blk3[7|9]/c11/VDD blk3[7|1]/c01/BLB VSUBS blk2[3|9]/c11/WL blk3[7|1]/c01/BL
++ blk3[7|1]/c11/BLB VSUBS sram_quad
+Xblk2[4|1] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|1]/c11/BL blk3[7|9]/c11/VDD blk3[7|1]/c01/BLB VSUBS blk2[4|9]/c11/WL blk3[7|1]/c01/BL
++ blk3[7|1]/c11/BLB VSUBS sram_quad
+Xblk2[5|1] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|1]/c11/BL blk3[7|9]/c11/VDD blk3[7|1]/c01/BLB VSUBS blk2[5|9]/c11/WL blk3[7|1]/c01/BL
++ blk3[7|1]/c11/BLB VSUBS sram_quad
+Xblk2[6|1] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|1]/c11/BL blk3[7|9]/c11/VDD blk3[7|1]/c01/BLB VSUBS blk2[6|9]/c11/WL blk3[7|1]/c01/BL
++ blk3[7|1]/c11/BLB VSUBS sram_quad
+Xblk2[7|1] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|1]/c11/BL blk3[7|9]/c11/VDD blk3[7|1]/c01/BLB VSUBS blk2[7|9]/c11/WL blk3[7|1]/c01/BL
++ blk3[7|1]/c11/BLB VSUBS sram_quad
+Xblk2[0|2] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|2]/c11/BL blk3[7|9]/c11/VDD blk3[7|2]/c01/BLB VSUBS blk2[0|9]/c11/WL blk3[7|2]/c01/BL
++ blk3[7|2]/c11/BLB VSUBS sram_quad
+Xblk2[1|2] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|2]/c11/BL blk3[7|9]/c11/VDD blk3[7|2]/c01/BLB VSUBS blk2[1|9]/c11/WL blk3[7|2]/c01/BL
++ blk3[7|2]/c11/BLB VSUBS sram_quad
+Xblk2[2|2] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|2]/c11/BL blk3[7|9]/c11/VDD blk3[7|2]/c01/BLB VSUBS blk2[2|9]/c11/WL blk3[7|2]/c01/BL
++ blk3[7|2]/c11/BLB VSUBS sram_quad
+Xblk2[3|2] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|2]/c11/BL blk3[7|9]/c11/VDD blk3[7|2]/c01/BLB VSUBS blk2[3|9]/c11/WL blk3[7|2]/c01/BL
++ blk3[7|2]/c11/BLB VSUBS sram_quad
+Xblk2[4|2] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|2]/c11/BL blk3[7|9]/c11/VDD blk3[7|2]/c01/BLB VSUBS blk2[4|9]/c11/WL blk3[7|2]/c01/BL
++ blk3[7|2]/c11/BLB VSUBS sram_quad
+Xblk2[5|2] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|2]/c11/BL blk3[7|9]/c11/VDD blk3[7|2]/c01/BLB VSUBS blk2[5|9]/c11/WL blk3[7|2]/c01/BL
++ blk3[7|2]/c11/BLB VSUBS sram_quad
+Xblk2[6|2] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|2]/c11/BL blk3[7|9]/c11/VDD blk3[7|2]/c01/BLB VSUBS blk2[6|9]/c11/WL blk3[7|2]/c01/BL
++ blk3[7|2]/c11/BLB VSUBS sram_quad
+Xblk2[7|2] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|2]/c11/BL blk3[7|9]/c11/VDD blk3[7|2]/c01/BLB VSUBS blk2[7|9]/c11/WL blk3[7|2]/c01/BL
++ blk3[7|2]/c11/BLB VSUBS sram_quad
+Xblk2[0|3] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|3]/c11/BL blk3[7|9]/c11/VDD blk3[7|3]/c01/BLB VSUBS blk2[0|9]/c11/WL blk3[7|3]/c01/BL
++ blk3[7|3]/c11/BLB VSUBS sram_quad
+Xblk2[1|3] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|3]/c11/BL blk3[7|9]/c11/VDD blk3[7|3]/c01/BLB VSUBS blk2[1|9]/c11/WL blk3[7|3]/c01/BL
++ blk3[7|3]/c11/BLB VSUBS sram_quad
+Xblk2[2|3] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|3]/c11/BL blk3[7|9]/c11/VDD blk3[7|3]/c01/BLB VSUBS blk2[2|9]/c11/WL blk3[7|3]/c01/BL
++ blk3[7|3]/c11/BLB VSUBS sram_quad
+Xblk2[3|3] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|3]/c11/BL blk3[7|9]/c11/VDD blk3[7|3]/c01/BLB VSUBS blk2[3|9]/c11/WL blk3[7|3]/c01/BL
++ blk3[7|3]/c11/BLB VSUBS sram_quad
+Xblk2[4|3] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|3]/c11/BL blk3[7|9]/c11/VDD blk3[7|3]/c01/BLB VSUBS blk2[4|9]/c11/WL blk3[7|3]/c01/BL
++ blk3[7|3]/c11/BLB VSUBS sram_quad
+Xblk2[5|3] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|3]/c11/BL blk3[7|9]/c11/VDD blk3[7|3]/c01/BLB VSUBS blk2[5|9]/c11/WL blk3[7|3]/c01/BL
++ blk3[7|3]/c11/BLB VSUBS sram_quad
+Xblk2[6|3] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|3]/c11/BL blk3[7|9]/c11/VDD blk3[7|3]/c01/BLB VSUBS blk2[6|9]/c11/WL blk3[7|3]/c01/BL
++ blk3[7|3]/c11/BLB VSUBS sram_quad
+Xblk2[7|3] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|3]/c11/BL blk3[7|9]/c11/VDD blk3[7|3]/c01/BLB VSUBS blk2[7|9]/c11/WL blk3[7|3]/c01/BL
++ blk3[7|3]/c11/BLB VSUBS sram_quad
+Xblk2[0|4] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|4]/c11/BL blk3[7|9]/c11/VDD blk3[7|4]/c01/BLB VSUBS blk2[0|9]/c11/WL blk3[7|4]/c01/BL
++ blk3[7|4]/c11/BLB VSUBS sram_quad
+Xblk2[1|4] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|4]/c11/BL blk3[7|9]/c11/VDD blk3[7|4]/c01/BLB VSUBS blk2[1|9]/c11/WL blk3[7|4]/c01/BL
++ blk3[7|4]/c11/BLB VSUBS sram_quad
+Xblk2[2|4] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|4]/c11/BL blk3[7|9]/c11/VDD blk3[7|4]/c01/BLB VSUBS blk2[2|9]/c11/WL blk3[7|4]/c01/BL
++ blk3[7|4]/c11/BLB VSUBS sram_quad
+Xblk2[3|4] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|4]/c11/BL blk3[7|9]/c11/VDD blk3[7|4]/c01/BLB VSUBS blk2[3|9]/c11/WL blk3[7|4]/c01/BL
++ blk3[7|4]/c11/BLB VSUBS sram_quad
+Xblk2[4|4] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|4]/c11/BL blk3[7|9]/c11/VDD blk3[7|4]/c01/BLB VSUBS blk2[4|9]/c11/WL blk3[7|4]/c01/BL
++ blk3[7|4]/c11/BLB VSUBS sram_quad
+Xblk2[5|4] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|4]/c11/BL blk3[7|9]/c11/VDD blk3[7|4]/c01/BLB VSUBS blk2[5|9]/c11/WL blk3[7|4]/c01/BL
++ blk3[7|4]/c11/BLB VSUBS sram_quad
+Xblk2[6|4] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|4]/c11/BL blk3[7|9]/c11/VDD blk3[7|4]/c01/BLB VSUBS blk2[6|9]/c11/WL blk3[7|4]/c01/BL
++ blk3[7|4]/c11/BLB VSUBS sram_quad
+Xblk2[7|4] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|4]/c11/BL blk3[7|9]/c11/VDD blk3[7|4]/c01/BLB VSUBS blk2[7|9]/c11/WL blk3[7|4]/c01/BL
++ blk3[7|4]/c11/BLB VSUBS sram_quad
+Xblk2[0|5] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|5]/c11/BL blk3[7|9]/c11/VDD blk3[7|5]/c01/BLB VSUBS blk2[0|9]/c11/WL blk3[7|5]/c01/BL
++ blk3[7|5]/c11/BLB VSUBS sram_quad
+Xblk2[1|5] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|5]/c11/BL blk3[7|9]/c11/VDD blk3[7|5]/c01/BLB VSUBS blk2[1|9]/c11/WL blk3[7|5]/c01/BL
++ blk3[7|5]/c11/BLB VSUBS sram_quad
+Xblk2[2|5] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|5]/c11/BL blk3[7|9]/c11/VDD blk3[7|5]/c01/BLB VSUBS blk2[2|9]/c11/WL blk3[7|5]/c01/BL
++ blk3[7|5]/c11/BLB VSUBS sram_quad
+Xblk2[3|5] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|5]/c11/BL blk3[7|9]/c11/VDD blk3[7|5]/c01/BLB VSUBS blk2[3|9]/c11/WL blk3[7|5]/c01/BL
++ blk3[7|5]/c11/BLB VSUBS sram_quad
+Xblk2[4|5] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|5]/c11/BL blk3[7|9]/c11/VDD blk3[7|5]/c01/BLB VSUBS blk2[4|9]/c11/WL blk3[7|5]/c01/BL
++ blk3[7|5]/c11/BLB VSUBS sram_quad
+Xblk2[5|5] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|5]/c11/BL blk3[7|9]/c11/VDD blk3[7|5]/c01/BLB VSUBS blk2[5|9]/c11/WL blk3[7|5]/c01/BL
++ blk3[7|5]/c11/BLB VSUBS sram_quad
+Xblk2[6|5] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|5]/c11/BL blk3[7|9]/c11/VDD blk3[7|5]/c01/BLB VSUBS blk2[6|9]/c11/WL blk3[7|5]/c01/BL
++ blk3[7|5]/c11/BLB VSUBS sram_quad
+Xblk2[7|5] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|5]/c11/BL blk3[7|9]/c11/VDD blk3[7|5]/c01/BLB VSUBS blk2[7|9]/c11/WL blk3[7|5]/c01/BL
++ blk3[7|5]/c11/BLB VSUBS sram_quad
+Xblk2[0|6] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|6]/c11/BL blk3[7|9]/c11/VDD blk3[7|6]/c01/BLB VSUBS blk2[0|9]/c11/WL blk3[7|6]/c01/BL
++ blk3[7|6]/c11/BLB VSUBS sram_quad
+Xblk2[1|6] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|6]/c11/BL blk3[7|9]/c11/VDD blk3[7|6]/c01/BLB VSUBS blk2[1|9]/c11/WL blk3[7|6]/c01/BL
++ blk3[7|6]/c11/BLB VSUBS sram_quad
+Xblk2[2|6] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|6]/c11/BL blk3[7|9]/c11/VDD blk3[7|6]/c01/BLB VSUBS blk2[2|9]/c11/WL blk3[7|6]/c01/BL
++ blk3[7|6]/c11/BLB VSUBS sram_quad
+Xblk2[3|6] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|6]/c11/BL blk3[7|9]/c11/VDD blk3[7|6]/c01/BLB VSUBS blk2[3|9]/c11/WL blk3[7|6]/c01/BL
++ blk3[7|6]/c11/BLB VSUBS sram_quad
+Xblk2[4|6] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|6]/c11/BL blk3[7|9]/c11/VDD blk3[7|6]/c01/BLB VSUBS blk2[4|9]/c11/WL blk3[7|6]/c01/BL
++ blk3[7|6]/c11/BLB VSUBS sram_quad
+Xblk2[5|6] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|6]/c11/BL blk3[7|9]/c11/VDD blk3[7|6]/c01/BLB VSUBS blk2[5|9]/c11/WL blk3[7|6]/c01/BL
++ blk3[7|6]/c11/BLB VSUBS sram_quad
+Xblk2[6|6] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|6]/c11/BL blk3[7|9]/c11/VDD blk3[7|6]/c01/BLB VSUBS blk2[6|9]/c11/WL blk3[7|6]/c01/BL
++ blk3[7|6]/c11/BLB VSUBS sram_quad
+Xblk2[7|6] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|6]/c11/BL blk3[7|9]/c11/VDD blk3[7|6]/c01/BLB VSUBS blk2[7|9]/c11/WL blk3[7|6]/c01/BL
++ blk3[7|6]/c11/BLB VSUBS sram_quad
+Xblk2[0|7] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|7]/c11/BL blk3[7|9]/c11/VDD blk3[7|7]/c01/BLB VSUBS blk2[0|9]/c11/WL blk3[7|7]/c01/BL
++ blk3[7|7]/c11/BLB VSUBS sram_quad
+Xblk2[1|7] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|7]/c11/BL blk3[7|9]/c11/VDD blk3[7|7]/c01/BLB VSUBS blk2[1|9]/c11/WL blk3[7|7]/c01/BL
++ blk3[7|7]/c11/BLB VSUBS sram_quad
+Xblk2[2|7] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|7]/c11/BL blk3[7|9]/c11/VDD blk3[7|7]/c01/BLB VSUBS blk2[2|9]/c11/WL blk3[7|7]/c01/BL
++ blk3[7|7]/c11/BLB VSUBS sram_quad
+Xblk2[3|7] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|7]/c11/BL blk3[7|9]/c11/VDD blk3[7|7]/c01/BLB VSUBS blk2[3|9]/c11/WL blk3[7|7]/c01/BL
++ blk3[7|7]/c11/BLB VSUBS sram_quad
+Xblk2[4|7] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|7]/c11/BL blk3[7|9]/c11/VDD blk3[7|7]/c01/BLB VSUBS blk2[4|9]/c11/WL blk3[7|7]/c01/BL
++ blk3[7|7]/c11/BLB VSUBS sram_quad
+Xblk2[5|7] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|7]/c11/BL blk3[7|9]/c11/VDD blk3[7|7]/c01/BLB VSUBS blk2[5|9]/c11/WL blk3[7|7]/c01/BL
++ blk3[7|7]/c11/BLB VSUBS sram_quad
+Xblk2[6|7] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|7]/c11/BL blk3[7|9]/c11/VDD blk3[7|7]/c01/BLB VSUBS blk2[6|9]/c11/WL blk3[7|7]/c01/BL
++ blk3[7|7]/c11/BLB VSUBS sram_quad
+Xblk2[7|7] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|7]/c11/BL blk3[7|9]/c11/VDD blk3[7|7]/c01/BLB VSUBS blk2[7|9]/c11/WL blk3[7|7]/c01/BL
++ blk3[7|7]/c11/BLB VSUBS sram_quad
+Xblk2[0|8] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|8]/c11/BL blk3[7|9]/c11/VDD blk3[7|8]/c01/BLB VSUBS blk2[0|9]/c11/WL blk3[7|8]/c01/BL
++ blk3[7|8]/c11/BLB VSUBS sram_quad
+Xblk2[1|8] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|8]/c11/BL blk3[7|9]/c11/VDD blk3[7|8]/c01/BLB VSUBS blk2[1|9]/c11/WL blk3[7|8]/c01/BL
++ blk3[7|8]/c11/BLB VSUBS sram_quad
+Xblk2[2|8] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|8]/c11/BL blk3[7|9]/c11/VDD blk3[7|8]/c01/BLB VSUBS blk2[2|9]/c11/WL blk3[7|8]/c01/BL
++ blk3[7|8]/c11/BLB VSUBS sram_quad
+Xblk2[3|8] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|8]/c11/BL blk3[7|9]/c11/VDD blk3[7|8]/c01/BLB VSUBS blk2[3|9]/c11/WL blk3[7|8]/c01/BL
++ blk3[7|8]/c11/BLB VSUBS sram_quad
+Xblk2[4|8] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|8]/c11/BL blk3[7|9]/c11/VDD blk3[7|8]/c01/BLB VSUBS blk2[4|9]/c11/WL blk3[7|8]/c01/BL
++ blk3[7|8]/c11/BLB VSUBS sram_quad
+Xblk2[5|8] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|8]/c11/BL blk3[7|9]/c11/VDD blk3[7|8]/c01/BLB VSUBS blk2[5|9]/c11/WL blk3[7|8]/c01/BL
++ blk3[7|8]/c11/BLB VSUBS sram_quad
+Xblk2[6|8] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|8]/c11/BL blk3[7|9]/c11/VDD blk3[7|8]/c01/BLB VSUBS blk2[6|9]/c11/WL blk3[7|8]/c01/BL
++ blk3[7|8]/c11/BLB VSUBS sram_quad
+Xblk2[7|8] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|8]/c11/BL blk3[7|9]/c11/VDD blk3[7|8]/c01/BLB VSUBS blk2[7|9]/c11/WL blk3[7|8]/c01/BL
++ blk3[7|8]/c11/BLB VSUBS sram_quad
+Xblk2[0|9] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|9]/c11/BL blk3[7|9]/c11/VDD blk3[7|9]/c01/BLB VSUBS blk2[0|9]/c11/WL blk3[7|9]/c01/BL
++ blk3[7|9]/c11/BLB VSUBS sram_quad
+Xblk2[1|9] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|9]/c11/BL blk3[7|9]/c11/VDD blk3[7|9]/c01/BLB VSUBS blk2[1|9]/c11/WL blk3[7|9]/c01/BL
++ blk3[7|9]/c11/BLB VSUBS sram_quad
+Xblk2[2|9] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|9]/c11/BL blk3[7|9]/c11/VDD blk3[7|9]/c01/BLB VSUBS blk2[2|9]/c11/WL blk3[7|9]/c01/BL
++ blk3[7|9]/c11/BLB VSUBS sram_quad
+Xblk2[3|9] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|9]/c11/BL blk3[7|9]/c11/VDD blk3[7|9]/c01/BLB VSUBS blk2[3|9]/c11/WL blk3[7|9]/c01/BL
++ blk3[7|9]/c11/BLB VSUBS sram_quad
+Xblk2[4|9] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|9]/c11/BL blk3[7|9]/c11/VDD blk3[7|9]/c01/BLB VSUBS blk2[4|9]/c11/WL blk3[7|9]/c01/BL
++ blk3[7|9]/c11/BLB VSUBS sram_quad
+Xblk2[5|9] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|9]/c11/BL blk3[7|9]/c11/VDD blk3[7|9]/c01/BLB VSUBS blk2[5|9]/c11/WL blk3[7|9]/c01/BL
++ blk3[7|9]/c11/BLB VSUBS sram_quad
+Xblk2[6|9] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|9]/c11/BL blk3[7|9]/c11/VDD blk3[7|9]/c01/BLB VSUBS blk2[6|9]/c11/WL blk3[7|9]/c01/BL
++ blk3[7|9]/c11/BLB VSUBS sram_quad
+Xblk2[7|9] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|9]/c11/BL blk3[7|9]/c11/VDD blk3[7|9]/c01/BLB VSUBS blk2[7|9]/c11/WL blk3[7|9]/c01/BL
++ blk3[7|9]/c11/BLB VSUBS sram_quad
+Xblk2[0|10] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|10]/c11/BL blk3[7|9]/c11/VDD blk3[7|10]/c01/BLB VSUBS blk2[0|9]/c11/WL blk3[7|10]/c01/BL
++ blk3[7|10]/c11/BLB VSUBS sram_quad
+Xblk2[1|10] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|10]/c11/BL blk3[7|9]/c11/VDD blk3[7|10]/c01/BLB VSUBS blk2[1|9]/c11/WL blk3[7|10]/c01/BL
++ blk3[7|10]/c11/BLB VSUBS sram_quad
+Xblk2[2|10] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|10]/c11/BL blk3[7|9]/c11/VDD blk3[7|10]/c01/BLB VSUBS blk2[2|9]/c11/WL blk3[7|10]/c01/BL
++ blk3[7|10]/c11/BLB VSUBS sram_quad
+Xblk2[3|10] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|10]/c11/BL blk3[7|9]/c11/VDD blk3[7|10]/c01/BLB VSUBS blk2[3|9]/c11/WL blk3[7|10]/c01/BL
++ blk3[7|10]/c11/BLB VSUBS sram_quad
+Xblk2[4|10] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|10]/c11/BL blk3[7|9]/c11/VDD blk3[7|10]/c01/BLB VSUBS blk2[4|9]/c11/WL blk3[7|10]/c01/BL
++ blk3[7|10]/c11/BLB VSUBS sram_quad
+Xblk2[5|10] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|10]/c11/BL blk3[7|9]/c11/VDD blk3[7|10]/c01/BLB VSUBS blk2[5|9]/c11/WL blk3[7|10]/c01/BL
++ blk3[7|10]/c11/BLB VSUBS sram_quad
+Xblk2[6|10] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|10]/c11/BL blk3[7|9]/c11/VDD blk3[7|10]/c01/BLB VSUBS blk2[6|9]/c11/WL blk3[7|10]/c01/BL
++ blk3[7|10]/c11/BLB VSUBS sram_quad
+Xblk2[7|10] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|10]/c11/BL blk3[7|9]/c11/VDD blk3[7|10]/c01/BLB VSUBS blk2[7|9]/c11/WL blk3[7|10]/c01/BL
++ blk3[7|10]/c11/BLB VSUBS sram_quad
+Xblk2[0|11] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|11]/c11/BL blk3[7|9]/c11/VDD blk3[7|11]/c01/BLB VSUBS blk2[0|9]/c11/WL blk3[7|11]/c01/BL
++ blk3[7|11]/c11/BLB VSUBS sram_quad
+Xblk2[1|11] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|11]/c11/BL blk3[7|9]/c11/VDD blk3[7|11]/c01/BLB VSUBS blk2[1|9]/c11/WL blk3[7|11]/c01/BL
++ blk3[7|11]/c11/BLB VSUBS sram_quad
+Xblk2[2|11] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|11]/c11/BL blk3[7|9]/c11/VDD blk3[7|11]/c01/BLB VSUBS blk2[2|9]/c11/WL blk3[7|11]/c01/BL
++ blk3[7|11]/c11/BLB VSUBS sram_quad
+Xblk2[3|11] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|11]/c11/BL blk3[7|9]/c11/VDD blk3[7|11]/c01/BLB VSUBS blk2[3|9]/c11/WL blk3[7|11]/c01/BL
++ blk3[7|11]/c11/BLB VSUBS sram_quad
+Xblk2[4|11] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|11]/c11/BL blk3[7|9]/c11/VDD blk3[7|11]/c01/BLB VSUBS blk2[4|9]/c11/WL blk3[7|11]/c01/BL
++ blk3[7|11]/c11/BLB VSUBS sram_quad
+Xblk2[5|11] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|11]/c11/BL blk3[7|9]/c11/VDD blk3[7|11]/c01/BLB VSUBS blk2[5|9]/c11/WL blk3[7|11]/c01/BL
++ blk3[7|11]/c11/BLB VSUBS sram_quad
+Xblk2[6|11] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|11]/c11/BL blk3[7|9]/c11/VDD blk3[7|11]/c01/BLB VSUBS blk2[6|9]/c11/WL blk3[7|11]/c01/BL
++ blk3[7|11]/c11/BLB VSUBS sram_quad
+Xblk2[7|11] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|11]/c11/BL blk3[7|9]/c11/VDD blk3[7|11]/c01/BLB VSUBS blk2[7|9]/c11/WL blk3[7|11]/c01/BL
++ blk3[7|11]/c11/BLB VSUBS sram_quad
+Xblk2[0|12] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|12]/c11/BL blk3[7|9]/c11/VDD blk3[7|12]/c01/BLB VSUBS blk2[0|9]/c11/WL blk3[7|12]/c01/BL
++ blk3[7|12]/c11/BLB VSUBS sram_quad
+Xblk2[1|12] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|12]/c11/BL blk3[7|9]/c11/VDD blk3[7|12]/c01/BLB VSUBS blk2[1|9]/c11/WL blk3[7|12]/c01/BL
++ blk3[7|12]/c11/BLB VSUBS sram_quad
+Xblk2[2|12] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|12]/c11/BL blk3[7|9]/c11/VDD blk3[7|12]/c01/BLB VSUBS blk2[2|9]/c11/WL blk3[7|12]/c01/BL
++ blk3[7|12]/c11/BLB VSUBS sram_quad
+Xblk2[3|12] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|12]/c11/BL blk3[7|9]/c11/VDD blk3[7|12]/c01/BLB VSUBS blk2[3|9]/c11/WL blk3[7|12]/c01/BL
++ blk3[7|12]/c11/BLB VSUBS sram_quad
+Xblk2[4|12] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|12]/c11/BL blk3[7|9]/c11/VDD blk3[7|12]/c01/BLB VSUBS blk2[4|9]/c11/WL blk3[7|12]/c01/BL
++ blk3[7|12]/c11/BLB VSUBS sram_quad
+Xblk2[5|12] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|12]/c11/BL blk3[7|9]/c11/VDD blk3[7|12]/c01/BLB VSUBS blk2[5|9]/c11/WL blk3[7|12]/c01/BL
++ blk3[7|12]/c11/BLB VSUBS sram_quad
+Xblk2[6|12] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|12]/c11/BL blk3[7|9]/c11/VDD blk3[7|12]/c01/BLB VSUBS blk2[6|9]/c11/WL blk3[7|12]/c01/BL
++ blk3[7|12]/c11/BLB VSUBS sram_quad
+Xblk2[7|12] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|12]/c11/BL blk3[7|9]/c11/VDD blk3[7|12]/c01/BLB VSUBS blk2[7|9]/c11/WL blk3[7|12]/c01/BL
++ blk3[7|12]/c11/BLB VSUBS sram_quad
+Xblk2[0|13] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|13]/c11/BL blk3[7|9]/c11/VDD blk3[7|13]/c01/BLB VSUBS blk2[0|9]/c11/WL blk3[7|13]/c01/BL
++ blk3[7|13]/c11/BLB VSUBS sram_quad
+Xblk2[1|13] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|13]/c11/BL blk3[7|9]/c11/VDD blk3[7|13]/c01/BLB VSUBS blk2[1|9]/c11/WL blk3[7|13]/c01/BL
++ blk3[7|13]/c11/BLB VSUBS sram_quad
+Xblk2[2|13] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|13]/c11/BL blk3[7|9]/c11/VDD blk3[7|13]/c01/BLB VSUBS blk2[2|9]/c11/WL blk3[7|13]/c01/BL
++ blk3[7|13]/c11/BLB VSUBS sram_quad
+Xblk2[3|13] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|13]/c11/BL blk3[7|9]/c11/VDD blk3[7|13]/c01/BLB VSUBS blk2[3|9]/c11/WL blk3[7|13]/c01/BL
++ blk3[7|13]/c11/BLB VSUBS sram_quad
+Xblk2[4|13] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|13]/c11/BL blk3[7|9]/c11/VDD blk3[7|13]/c01/BLB VSUBS blk2[4|9]/c11/WL blk3[7|13]/c01/BL
++ blk3[7|13]/c11/BLB VSUBS sram_quad
+Xblk2[5|13] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|13]/c11/BL blk3[7|9]/c11/VDD blk3[7|13]/c01/BLB VSUBS blk2[5|9]/c11/WL blk3[7|13]/c01/BL
++ blk3[7|13]/c11/BLB VSUBS sram_quad
+Xblk2[6|13] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|13]/c11/BL blk3[7|9]/c11/VDD blk3[7|13]/c01/BLB VSUBS blk2[6|9]/c11/WL blk3[7|13]/c01/BL
++ blk3[7|13]/c11/BLB VSUBS sram_quad
+Xblk2[7|13] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|13]/c11/BL blk3[7|9]/c11/VDD blk3[7|13]/c01/BLB VSUBS blk2[7|9]/c11/WL blk3[7|13]/c01/BL
++ blk3[7|13]/c11/BLB VSUBS sram_quad
+Xblk2[0|14] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|14]/c11/BL blk3[7|9]/c11/VDD blk3[7|14]/c01/BLB VSUBS blk2[0|9]/c11/WL blk3[7|14]/c01/BL
++ blk3[7|14]/c11/BLB VSUBS sram_quad
+Xblk2[1|14] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|14]/c11/BL blk3[7|9]/c11/VDD blk3[7|14]/c01/BLB VSUBS blk2[1|9]/c11/WL blk3[7|14]/c01/BL
++ blk3[7|14]/c11/BLB VSUBS sram_quad
+Xblk2[2|14] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|14]/c11/BL blk3[7|9]/c11/VDD blk3[7|14]/c01/BLB VSUBS blk2[2|9]/c11/WL blk3[7|14]/c01/BL
++ blk3[7|14]/c11/BLB VSUBS sram_quad
+Xblk2[3|14] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|14]/c11/BL blk3[7|9]/c11/VDD blk3[7|14]/c01/BLB VSUBS blk2[3|9]/c11/WL blk3[7|14]/c01/BL
++ blk3[7|14]/c11/BLB VSUBS sram_quad
+Xblk2[4|14] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|14]/c11/BL blk3[7|9]/c11/VDD blk3[7|14]/c01/BLB VSUBS blk2[4|9]/c11/WL blk3[7|14]/c01/BL
++ blk3[7|14]/c11/BLB VSUBS sram_quad
+Xblk2[5|14] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|14]/c11/BL blk3[7|9]/c11/VDD blk3[7|14]/c01/BLB VSUBS blk2[5|9]/c11/WL blk3[7|14]/c01/BL
++ blk3[7|14]/c11/BLB VSUBS sram_quad
+Xblk2[6|14] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|14]/c11/BL blk3[7|9]/c11/VDD blk3[7|14]/c01/BLB VSUBS blk2[6|9]/c11/WL blk3[7|14]/c01/BL
++ blk3[7|14]/c11/BLB VSUBS sram_quad
+Xblk2[7|14] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|14]/c11/BL blk3[7|9]/c11/VDD blk3[7|14]/c01/BLB VSUBS blk2[7|9]/c11/WL blk3[7|14]/c01/BL
++ blk3[7|14]/c11/BLB VSUBS sram_quad
+Xblk2[0|15] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|15]/c11/BL blk3[7|9]/c11/VDD blk3[7|15]/c01/BLB VSUBS blk2[0|9]/c11/WL blk3[7|15]/c01/BL
++ blk3[7|15]/c11/BLB VSUBS sram_quad
+Xblk2[1|15] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|15]/c11/BL blk3[7|9]/c11/VDD blk3[7|15]/c01/BLB VSUBS blk2[1|9]/c11/WL blk3[7|15]/c01/BL
++ blk3[7|15]/c11/BLB VSUBS sram_quad
+Xblk2[2|15] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|15]/c11/BL blk3[7|9]/c11/VDD blk3[7|15]/c01/BLB VSUBS blk2[2|9]/c11/WL blk3[7|15]/c01/BL
++ blk3[7|15]/c11/BLB VSUBS sram_quad
+Xblk2[3|15] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|15]/c11/BL blk3[7|9]/c11/VDD blk3[7|15]/c01/BLB VSUBS blk2[3|9]/c11/WL blk3[7|15]/c01/BL
++ blk3[7|15]/c11/BLB VSUBS sram_quad
+Xblk2[4|15] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|15]/c11/BL blk3[7|9]/c11/VDD blk3[7|15]/c01/BLB VSUBS blk2[4|9]/c11/WL blk3[7|15]/c01/BL
++ blk3[7|15]/c11/BLB VSUBS sram_quad
+Xblk2[5|15] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|15]/c11/BL blk3[7|9]/c11/VDD blk3[7|15]/c01/BLB VSUBS blk2[5|9]/c11/WL blk3[7|15]/c01/BL
++ blk3[7|15]/c11/BLB VSUBS sram_quad
+Xblk2[6|15] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|15]/c11/BL blk3[7|9]/c11/VDD blk3[7|15]/c01/BLB VSUBS blk2[6|9]/c11/WL blk3[7|15]/c01/BL
++ blk3[7|15]/c11/BLB VSUBS sram_quad
+Xblk2[7|15] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk2[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|15]/c11/BL blk3[7|9]/c11/VDD blk3[7|15]/c01/BLB VSUBS blk2[7|9]/c11/WL blk3[7|15]/c01/BL
++ blk3[7|15]/c11/BLB VSUBS sram_quad
+Xblk3[0|0] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|0]/c11/BL blk3[7|9]/c11/VDD blk3[7|0]/c01/BLB VSUBS blk3[0|9]/c11/WL blk3[7|0]/c01/BL
++ blk3[7|0]/c11/BLB VSUBS sram_quad
+Xblk3[1|0] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|0]/c11/BL blk3[7|9]/c11/VDD blk3[7|0]/c01/BLB VSUBS blk3[1|9]/c11/WL blk3[7|0]/c01/BL
++ blk3[7|0]/c11/BLB VSUBS sram_quad
+Xblk3[2|0] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|0]/c11/BL blk3[7|9]/c11/VDD blk3[7|0]/c01/BLB VSUBS blk3[2|9]/c11/WL blk3[7|0]/c01/BL
++ blk3[7|0]/c11/BLB VSUBS sram_quad
+Xblk3[3|0] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|0]/c11/BL blk3[7|9]/c11/VDD blk3[7|0]/c01/BLB VSUBS blk3[3|9]/c11/WL blk3[7|0]/c01/BL
++ blk3[7|0]/c11/BLB VSUBS sram_quad
+Xblk3[4|0] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|0]/c11/BL blk3[7|9]/c11/VDD blk3[7|0]/c01/BLB VSUBS blk3[4|9]/c11/WL blk3[7|0]/c01/BL
++ blk3[7|0]/c11/BLB VSUBS sram_quad
+Xblk3[5|0] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|0]/c11/BL blk3[7|9]/c11/VDD blk3[7|0]/c01/BLB VSUBS blk3[5|9]/c11/WL blk3[7|0]/c01/BL
++ blk3[7|0]/c11/BLB VSUBS sram_quad
+Xblk3[6|0] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|0]/c11/BL blk3[7|9]/c11/VDD blk3[7|0]/c01/BLB VSUBS blk3[6|9]/c11/WL blk3[7|0]/c01/BL
++ blk3[7|0]/c11/BLB VSUBS sram_quad
+Xblk3[7|0] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|0]/c11/BL blk3[7|9]/c11/VDD blk3[7|0]/c01/BLB VSUBS blk3[7|9]/c11/WL blk3[7|0]/c01/BL
++ blk3[7|0]/c11/BLB VSUBS sram_quad
+Xblk3[0|1] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|1]/c11/BL blk3[7|9]/c11/VDD blk3[7|1]/c01/BLB VSUBS blk3[0|9]/c11/WL blk3[7|1]/c01/BL
++ blk3[7|1]/c11/BLB VSUBS sram_quad
+Xblk3[1|1] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|1]/c11/BL blk3[7|9]/c11/VDD blk3[7|1]/c01/BLB VSUBS blk3[1|9]/c11/WL blk3[7|1]/c01/BL
++ blk3[7|1]/c11/BLB VSUBS sram_quad
+Xblk3[2|1] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|1]/c11/BL blk3[7|9]/c11/VDD blk3[7|1]/c01/BLB VSUBS blk3[2|9]/c11/WL blk3[7|1]/c01/BL
++ blk3[7|1]/c11/BLB VSUBS sram_quad
+Xblk3[3|1] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|1]/c11/BL blk3[7|9]/c11/VDD blk3[7|1]/c01/BLB VSUBS blk3[3|9]/c11/WL blk3[7|1]/c01/BL
++ blk3[7|1]/c11/BLB VSUBS sram_quad
+Xblk3[4|1] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|1]/c11/BL blk3[7|9]/c11/VDD blk3[7|1]/c01/BLB VSUBS blk3[4|9]/c11/WL blk3[7|1]/c01/BL
++ blk3[7|1]/c11/BLB VSUBS sram_quad
+Xblk3[5|1] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|1]/c11/BL blk3[7|9]/c11/VDD blk3[7|1]/c01/BLB VSUBS blk3[5|9]/c11/WL blk3[7|1]/c01/BL
++ blk3[7|1]/c11/BLB VSUBS sram_quad
+Xblk3[6|1] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|1]/c11/BL blk3[7|9]/c11/VDD blk3[7|1]/c01/BLB VSUBS blk3[6|9]/c11/WL blk3[7|1]/c01/BL
++ blk3[7|1]/c11/BLB VSUBS sram_quad
+Xblk3[7|1] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|1]/c11/BL blk3[7|9]/c11/VDD blk3[7|1]/c01/BLB VSUBS blk3[7|9]/c11/WL blk3[7|1]/c01/BL
++ blk3[7|1]/c11/BLB VSUBS sram_quad
+Xblk3[0|2] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|2]/c11/BL blk3[7|9]/c11/VDD blk3[7|2]/c01/BLB VSUBS blk3[0|9]/c11/WL blk3[7|2]/c01/BL
++ blk3[7|2]/c11/BLB VSUBS sram_quad
+Xblk3[1|2] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|2]/c11/BL blk3[7|9]/c11/VDD blk3[7|2]/c01/BLB VSUBS blk3[1|9]/c11/WL blk3[7|2]/c01/BL
++ blk3[7|2]/c11/BLB VSUBS sram_quad
+Xblk3[2|2] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|2]/c11/BL blk3[7|9]/c11/VDD blk3[7|2]/c01/BLB VSUBS blk3[2|9]/c11/WL blk3[7|2]/c01/BL
++ blk3[7|2]/c11/BLB VSUBS sram_quad
+Xblk3[3|2] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|2]/c11/BL blk3[7|9]/c11/VDD blk3[7|2]/c01/BLB VSUBS blk3[3|9]/c11/WL blk3[7|2]/c01/BL
++ blk3[7|2]/c11/BLB VSUBS sram_quad
+Xblk3[4|2] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|2]/c11/BL blk3[7|9]/c11/VDD blk3[7|2]/c01/BLB VSUBS blk3[4|9]/c11/WL blk3[7|2]/c01/BL
++ blk3[7|2]/c11/BLB VSUBS sram_quad
+Xblk3[5|2] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|2]/c11/BL blk3[7|9]/c11/VDD blk3[7|2]/c01/BLB VSUBS blk3[5|9]/c11/WL blk3[7|2]/c01/BL
++ blk3[7|2]/c11/BLB VSUBS sram_quad
+Xblk3[6|2] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|2]/c11/BL blk3[7|9]/c11/VDD blk3[7|2]/c01/BLB VSUBS blk3[6|9]/c11/WL blk3[7|2]/c01/BL
++ blk3[7|2]/c11/BLB VSUBS sram_quad
+Xblk3[7|2] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|2]/c11/BL blk3[7|9]/c11/VDD blk3[7|2]/c01/BLB VSUBS blk3[7|9]/c11/WL blk3[7|2]/c01/BL
++ blk3[7|2]/c11/BLB VSUBS sram_quad
+Xblk3[0|3] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|3]/c11/BL blk3[7|9]/c11/VDD blk3[7|3]/c01/BLB VSUBS blk3[0|9]/c11/WL blk3[7|3]/c01/BL
++ blk3[7|3]/c11/BLB VSUBS sram_quad
+Xblk3[1|3] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|3]/c11/BL blk3[7|9]/c11/VDD blk3[7|3]/c01/BLB VSUBS blk3[1|9]/c11/WL blk3[7|3]/c01/BL
++ blk3[7|3]/c11/BLB VSUBS sram_quad
+Xblk3[2|3] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|3]/c11/BL blk3[7|9]/c11/VDD blk3[7|3]/c01/BLB VSUBS blk3[2|9]/c11/WL blk3[7|3]/c01/BL
++ blk3[7|3]/c11/BLB VSUBS sram_quad
+Xblk3[3|3] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|3]/c11/BL blk3[7|9]/c11/VDD blk3[7|3]/c01/BLB VSUBS blk3[3|9]/c11/WL blk3[7|3]/c01/BL
++ blk3[7|3]/c11/BLB VSUBS sram_quad
+Xblk3[4|3] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|3]/c11/BL blk3[7|9]/c11/VDD blk3[7|3]/c01/BLB VSUBS blk3[4|9]/c11/WL blk3[7|3]/c01/BL
++ blk3[7|3]/c11/BLB VSUBS sram_quad
+Xblk3[5|3] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|3]/c11/BL blk3[7|9]/c11/VDD blk3[7|3]/c01/BLB VSUBS blk3[5|9]/c11/WL blk3[7|3]/c01/BL
++ blk3[7|3]/c11/BLB VSUBS sram_quad
+Xblk3[6|3] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|3]/c11/BL blk3[7|9]/c11/VDD blk3[7|3]/c01/BLB VSUBS blk3[6|9]/c11/WL blk3[7|3]/c01/BL
++ blk3[7|3]/c11/BLB VSUBS sram_quad
+Xblk3[7|3] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|3]/c11/BL blk3[7|9]/c11/VDD blk3[7|3]/c01/BLB VSUBS blk3[7|9]/c11/WL blk3[7|3]/c01/BL
++ blk3[7|3]/c11/BLB VSUBS sram_quad
+Xblk3[0|4] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|4]/c11/BL blk3[7|9]/c11/VDD blk3[7|4]/c01/BLB VSUBS blk3[0|9]/c11/WL blk3[7|4]/c01/BL
++ blk3[7|4]/c11/BLB VSUBS sram_quad
+Xblk3[1|4] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|4]/c11/BL blk3[7|9]/c11/VDD blk3[7|4]/c01/BLB VSUBS blk3[1|9]/c11/WL blk3[7|4]/c01/BL
++ blk3[7|4]/c11/BLB VSUBS sram_quad
+Xblk3[2|4] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|4]/c11/BL blk3[7|9]/c11/VDD blk3[7|4]/c01/BLB VSUBS blk3[2|9]/c11/WL blk3[7|4]/c01/BL
++ blk3[7|4]/c11/BLB VSUBS sram_quad
+Xblk3[3|4] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|4]/c11/BL blk3[7|9]/c11/VDD blk3[7|4]/c01/BLB VSUBS blk3[3|9]/c11/WL blk3[7|4]/c01/BL
++ blk3[7|4]/c11/BLB VSUBS sram_quad
+Xblk3[4|4] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|4]/c11/BL blk3[7|9]/c11/VDD blk3[7|4]/c01/BLB VSUBS blk3[4|9]/c11/WL blk3[7|4]/c01/BL
++ blk3[7|4]/c11/BLB VSUBS sram_quad
+Xblk3[5|4] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|4]/c11/BL blk3[7|9]/c11/VDD blk3[7|4]/c01/BLB VSUBS blk3[5|9]/c11/WL blk3[7|4]/c01/BL
++ blk3[7|4]/c11/BLB VSUBS sram_quad
+Xblk3[6|4] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|4]/c11/BL blk3[7|9]/c11/VDD blk3[7|4]/c01/BLB VSUBS blk3[6|9]/c11/WL blk3[7|4]/c01/BL
++ blk3[7|4]/c11/BLB VSUBS sram_quad
+Xblk3[7|4] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|4]/c11/BL blk3[7|9]/c11/VDD blk3[7|4]/c01/BLB VSUBS blk3[7|9]/c11/WL blk3[7|4]/c01/BL
++ blk3[7|4]/c11/BLB VSUBS sram_quad
+Xblk3[0|5] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|5]/c11/BL blk3[7|9]/c11/VDD blk3[7|5]/c01/BLB VSUBS blk3[0|9]/c11/WL blk3[7|5]/c01/BL
++ blk3[7|5]/c11/BLB VSUBS sram_quad
+Xblk3[1|5] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|5]/c11/BL blk3[7|9]/c11/VDD blk3[7|5]/c01/BLB VSUBS blk3[1|9]/c11/WL blk3[7|5]/c01/BL
++ blk3[7|5]/c11/BLB VSUBS sram_quad
+Xblk3[2|5] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|5]/c11/BL blk3[7|9]/c11/VDD blk3[7|5]/c01/BLB VSUBS blk3[2|9]/c11/WL blk3[7|5]/c01/BL
++ blk3[7|5]/c11/BLB VSUBS sram_quad
+Xblk3[3|5] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|5]/c11/BL blk3[7|9]/c11/VDD blk3[7|5]/c01/BLB VSUBS blk3[3|9]/c11/WL blk3[7|5]/c01/BL
++ blk3[7|5]/c11/BLB VSUBS sram_quad
+Xblk3[4|5] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|5]/c11/BL blk3[7|9]/c11/VDD blk3[7|5]/c01/BLB VSUBS blk3[4|9]/c11/WL blk3[7|5]/c01/BL
++ blk3[7|5]/c11/BLB VSUBS sram_quad
+Xblk3[5|5] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|5]/c11/BL blk3[7|9]/c11/VDD blk3[7|5]/c01/BLB VSUBS blk3[5|9]/c11/WL blk3[7|5]/c01/BL
++ blk3[7|5]/c11/BLB VSUBS sram_quad
+Xblk3[6|5] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|5]/c11/BL blk3[7|9]/c11/VDD blk3[7|5]/c01/BLB VSUBS blk3[6|9]/c11/WL blk3[7|5]/c01/BL
++ blk3[7|5]/c11/BLB VSUBS sram_quad
+Xblk3[7|5] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|5]/c11/BL blk3[7|9]/c11/VDD blk3[7|5]/c01/BLB VSUBS blk3[7|9]/c11/WL blk3[7|5]/c01/BL
++ blk3[7|5]/c11/BLB VSUBS sram_quad
+Xblk3[0|6] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|6]/c11/BL blk3[7|9]/c11/VDD blk3[7|6]/c01/BLB VSUBS blk3[0|9]/c11/WL blk3[7|6]/c01/BL
++ blk3[7|6]/c11/BLB VSUBS sram_quad
+Xblk3[1|6] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|6]/c11/BL blk3[7|9]/c11/VDD blk3[7|6]/c01/BLB VSUBS blk3[1|9]/c11/WL blk3[7|6]/c01/BL
++ blk3[7|6]/c11/BLB VSUBS sram_quad
+Xblk3[2|6] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|6]/c11/BL blk3[7|9]/c11/VDD blk3[7|6]/c01/BLB VSUBS blk3[2|9]/c11/WL blk3[7|6]/c01/BL
++ blk3[7|6]/c11/BLB VSUBS sram_quad
+Xblk3[3|6] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|6]/c11/BL blk3[7|9]/c11/VDD blk3[7|6]/c01/BLB VSUBS blk3[3|9]/c11/WL blk3[7|6]/c01/BL
++ blk3[7|6]/c11/BLB VSUBS sram_quad
+Xblk3[4|6] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|6]/c11/BL blk3[7|9]/c11/VDD blk3[7|6]/c01/BLB VSUBS blk3[4|9]/c11/WL blk3[7|6]/c01/BL
++ blk3[7|6]/c11/BLB VSUBS sram_quad
+Xblk3[5|6] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|6]/c11/BL blk3[7|9]/c11/VDD blk3[7|6]/c01/BLB VSUBS blk3[5|9]/c11/WL blk3[7|6]/c01/BL
++ blk3[7|6]/c11/BLB VSUBS sram_quad
+Xblk3[6|6] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|6]/c11/BL blk3[7|9]/c11/VDD blk3[7|6]/c01/BLB VSUBS blk3[6|9]/c11/WL blk3[7|6]/c01/BL
++ blk3[7|6]/c11/BLB VSUBS sram_quad
+Xblk3[7|6] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|6]/c11/BL blk3[7|9]/c11/VDD blk3[7|6]/c01/BLB VSUBS blk3[7|9]/c11/WL blk3[7|6]/c01/BL
++ blk3[7|6]/c11/BLB VSUBS sram_quad
+Xblk3[0|7] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|7]/c11/BL blk3[7|9]/c11/VDD blk3[7|7]/c01/BLB VSUBS blk3[0|9]/c11/WL blk3[7|7]/c01/BL
++ blk3[7|7]/c11/BLB VSUBS sram_quad
+Xblk3[1|7] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|7]/c11/BL blk3[7|9]/c11/VDD blk3[7|7]/c01/BLB VSUBS blk3[1|9]/c11/WL blk3[7|7]/c01/BL
++ blk3[7|7]/c11/BLB VSUBS sram_quad
+Xblk3[2|7] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|7]/c11/BL blk3[7|9]/c11/VDD blk3[7|7]/c01/BLB VSUBS blk3[2|9]/c11/WL blk3[7|7]/c01/BL
++ blk3[7|7]/c11/BLB VSUBS sram_quad
+Xblk3[3|7] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|7]/c11/BL blk3[7|9]/c11/VDD blk3[7|7]/c01/BLB VSUBS blk3[3|9]/c11/WL blk3[7|7]/c01/BL
++ blk3[7|7]/c11/BLB VSUBS sram_quad
+Xblk3[4|7] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|7]/c11/BL blk3[7|9]/c11/VDD blk3[7|7]/c01/BLB VSUBS blk3[4|9]/c11/WL blk3[7|7]/c01/BL
++ blk3[7|7]/c11/BLB VSUBS sram_quad
+Xblk3[5|7] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|7]/c11/BL blk3[7|9]/c11/VDD blk3[7|7]/c01/BLB VSUBS blk3[5|9]/c11/WL blk3[7|7]/c01/BL
++ blk3[7|7]/c11/BLB VSUBS sram_quad
+Xblk3[6|7] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|7]/c11/BL blk3[7|9]/c11/VDD blk3[7|7]/c01/BLB VSUBS blk3[6|9]/c11/WL blk3[7|7]/c01/BL
++ blk3[7|7]/c11/BLB VSUBS sram_quad
+Xblk3[7|7] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|7]/c11/BL blk3[7|9]/c11/VDD blk3[7|7]/c01/BLB VSUBS blk3[7|9]/c11/WL blk3[7|7]/c01/BL
++ blk3[7|7]/c11/BLB VSUBS sram_quad
+Xblk3[0|8] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|8]/c11/BL blk3[7|9]/c11/VDD blk3[7|8]/c01/BLB VSUBS blk3[0|9]/c11/WL blk3[7|8]/c01/BL
++ blk3[7|8]/c11/BLB VSUBS sram_quad
+Xblk3[1|8] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|8]/c11/BL blk3[7|9]/c11/VDD blk3[7|8]/c01/BLB VSUBS blk3[1|9]/c11/WL blk3[7|8]/c01/BL
++ blk3[7|8]/c11/BLB VSUBS sram_quad
+Xblk3[2|8] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|8]/c11/BL blk3[7|9]/c11/VDD blk3[7|8]/c01/BLB VSUBS blk3[2|9]/c11/WL blk3[7|8]/c01/BL
++ blk3[7|8]/c11/BLB VSUBS sram_quad
+Xblk3[3|8] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|8]/c11/BL blk3[7|9]/c11/VDD blk3[7|8]/c01/BLB VSUBS blk3[3|9]/c11/WL blk3[7|8]/c01/BL
++ blk3[7|8]/c11/BLB VSUBS sram_quad
+Xblk3[4|8] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|8]/c11/BL blk3[7|9]/c11/VDD blk3[7|8]/c01/BLB VSUBS blk3[4|9]/c11/WL blk3[7|8]/c01/BL
++ blk3[7|8]/c11/BLB VSUBS sram_quad
+Xblk3[5|8] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|8]/c11/BL blk3[7|9]/c11/VDD blk3[7|8]/c01/BLB VSUBS blk3[5|9]/c11/WL blk3[7|8]/c01/BL
++ blk3[7|8]/c11/BLB VSUBS sram_quad
+Xblk3[6|8] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|8]/c11/BL blk3[7|9]/c11/VDD blk3[7|8]/c01/BLB VSUBS blk3[6|9]/c11/WL blk3[7|8]/c01/BL
++ blk3[7|8]/c11/BLB VSUBS sram_quad
+Xblk3[7|8] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|8]/c11/BL blk3[7|9]/c11/VDD blk3[7|8]/c01/BLB VSUBS blk3[7|9]/c11/WL blk3[7|8]/c01/BL
++ blk3[7|8]/c11/BLB VSUBS sram_quad
+Xblk3[0|9] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|9]/c11/BL blk3[7|9]/c11/VDD blk3[7|9]/c01/BLB VSUBS blk3[0|9]/c11/WL blk3[7|9]/c01/BL
++ blk3[7|9]/c11/BLB VSUBS sram_quad
+Xblk3[1|9] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|9]/c11/BL blk3[7|9]/c11/VDD blk3[7|9]/c01/BLB VSUBS blk3[1|9]/c11/WL blk3[7|9]/c01/BL
++ blk3[7|9]/c11/BLB VSUBS sram_quad
+Xblk3[2|9] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|9]/c11/BL blk3[7|9]/c11/VDD blk3[7|9]/c01/BLB VSUBS blk3[2|9]/c11/WL blk3[7|9]/c01/BL
++ blk3[7|9]/c11/BLB VSUBS sram_quad
+Xblk3[3|9] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|9]/c11/BL blk3[7|9]/c11/VDD blk3[7|9]/c01/BLB VSUBS blk3[3|9]/c11/WL blk3[7|9]/c01/BL
++ blk3[7|9]/c11/BLB VSUBS sram_quad
+Xblk3[4|9] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|9]/c11/BL blk3[7|9]/c11/VDD blk3[7|9]/c01/BLB VSUBS blk3[4|9]/c11/WL blk3[7|9]/c01/BL
++ blk3[7|9]/c11/BLB VSUBS sram_quad
+Xblk3[5|9] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|9]/c11/BL blk3[7|9]/c11/VDD blk3[7|9]/c01/BLB VSUBS blk3[5|9]/c11/WL blk3[7|9]/c01/BL
++ blk3[7|9]/c11/BLB VSUBS sram_quad
+Xblk3[6|9] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|9]/c11/BL blk3[7|9]/c11/VDD blk3[7|9]/c01/BLB VSUBS blk3[6|9]/c11/WL blk3[7|9]/c01/BL
++ blk3[7|9]/c11/BLB VSUBS sram_quad
+Xblk3[7|9] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|9]/c11/BL blk3[7|9]/c11/VDD blk3[7|9]/c01/BLB VSUBS blk3[7|9]/c11/WL blk3[7|9]/c01/BL
++ blk3[7|9]/c11/BLB VSUBS sram_quad
+Xblk3[0|10] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|10]/c11/BL blk3[7|9]/c11/VDD blk3[7|10]/c01/BLB VSUBS blk3[0|9]/c11/WL blk3[7|10]/c01/BL
++ blk3[7|10]/c11/BLB VSUBS sram_quad
+Xblk3[1|10] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|10]/c11/BL blk3[7|9]/c11/VDD blk3[7|10]/c01/BLB VSUBS blk3[1|9]/c11/WL blk3[7|10]/c01/BL
++ blk3[7|10]/c11/BLB VSUBS sram_quad
+Xblk3[2|10] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|10]/c11/BL blk3[7|9]/c11/VDD blk3[7|10]/c01/BLB VSUBS blk3[2|9]/c11/WL blk3[7|10]/c01/BL
++ blk3[7|10]/c11/BLB VSUBS sram_quad
+Xblk3[3|10] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|10]/c11/BL blk3[7|9]/c11/VDD blk3[7|10]/c01/BLB VSUBS blk3[3|9]/c11/WL blk3[7|10]/c01/BL
++ blk3[7|10]/c11/BLB VSUBS sram_quad
+Xblk3[4|10] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|10]/c11/BL blk3[7|9]/c11/VDD blk3[7|10]/c01/BLB VSUBS blk3[4|9]/c11/WL blk3[7|10]/c01/BL
++ blk3[7|10]/c11/BLB VSUBS sram_quad
+Xblk3[5|10] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|10]/c11/BL blk3[7|9]/c11/VDD blk3[7|10]/c01/BLB VSUBS blk3[5|9]/c11/WL blk3[7|10]/c01/BL
++ blk3[7|10]/c11/BLB VSUBS sram_quad
+Xblk3[6|10] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|10]/c11/BL blk3[7|9]/c11/VDD blk3[7|10]/c01/BLB VSUBS blk3[6|9]/c11/WL blk3[7|10]/c01/BL
++ blk3[7|10]/c11/BLB VSUBS sram_quad
+Xblk3[7|10] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|10]/c11/BL blk3[7|9]/c11/VDD blk3[7|10]/c01/BLB VSUBS blk3[7|9]/c11/WL blk3[7|10]/c01/BL
++ blk3[7|10]/c11/BLB VSUBS sram_quad
+Xblk3[0|11] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|11]/c11/BL blk3[7|9]/c11/VDD blk3[7|11]/c01/BLB VSUBS blk3[0|9]/c11/WL blk3[7|11]/c01/BL
++ blk3[7|11]/c11/BLB VSUBS sram_quad
+Xblk3[1|11] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|11]/c11/BL blk3[7|9]/c11/VDD blk3[7|11]/c01/BLB VSUBS blk3[1|9]/c11/WL blk3[7|11]/c01/BL
++ blk3[7|11]/c11/BLB VSUBS sram_quad
+Xblk3[2|11] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|11]/c11/BL blk3[7|9]/c11/VDD blk3[7|11]/c01/BLB VSUBS blk3[2|9]/c11/WL blk3[7|11]/c01/BL
++ blk3[7|11]/c11/BLB VSUBS sram_quad
+Xblk3[3|11] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|11]/c11/BL blk3[7|9]/c11/VDD blk3[7|11]/c01/BLB VSUBS blk3[3|9]/c11/WL blk3[7|11]/c01/BL
++ blk3[7|11]/c11/BLB VSUBS sram_quad
+Xblk3[4|11] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|11]/c11/BL blk3[7|9]/c11/VDD blk3[7|11]/c01/BLB VSUBS blk3[4|9]/c11/WL blk3[7|11]/c01/BL
++ blk3[7|11]/c11/BLB VSUBS sram_quad
+Xblk3[5|11] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|11]/c11/BL blk3[7|9]/c11/VDD blk3[7|11]/c01/BLB VSUBS blk3[5|9]/c11/WL blk3[7|11]/c01/BL
++ blk3[7|11]/c11/BLB VSUBS sram_quad
+Xblk3[6|11] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|11]/c11/BL blk3[7|9]/c11/VDD blk3[7|11]/c01/BLB VSUBS blk3[6|9]/c11/WL blk3[7|11]/c01/BL
++ blk3[7|11]/c11/BLB VSUBS sram_quad
+Xblk3[7|11] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|11]/c11/BL blk3[7|9]/c11/VDD blk3[7|11]/c01/BLB VSUBS blk3[7|9]/c11/WL blk3[7|11]/c01/BL
++ blk3[7|11]/c11/BLB VSUBS sram_quad
+Xblk3[0|12] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|12]/c11/BL blk3[7|9]/c11/VDD blk3[7|12]/c01/BLB VSUBS blk3[0|9]/c11/WL blk3[7|12]/c01/BL
++ blk3[7|12]/c11/BLB VSUBS sram_quad
+Xblk3[1|12] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|12]/c11/BL blk3[7|9]/c11/VDD blk3[7|12]/c01/BLB VSUBS blk3[1|9]/c11/WL blk3[7|12]/c01/BL
++ blk3[7|12]/c11/BLB VSUBS sram_quad
+Xblk3[2|12] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|12]/c11/BL blk3[7|9]/c11/VDD blk3[7|12]/c01/BLB VSUBS blk3[2|9]/c11/WL blk3[7|12]/c01/BL
++ blk3[7|12]/c11/BLB VSUBS sram_quad
+Xblk3[3|12] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|12]/c11/BL blk3[7|9]/c11/VDD blk3[7|12]/c01/BLB VSUBS blk3[3|9]/c11/WL blk3[7|12]/c01/BL
++ blk3[7|12]/c11/BLB VSUBS sram_quad
+Xblk3[4|12] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|12]/c11/BL blk3[7|9]/c11/VDD blk3[7|12]/c01/BLB VSUBS blk3[4|9]/c11/WL blk3[7|12]/c01/BL
++ blk3[7|12]/c11/BLB VSUBS sram_quad
+Xblk3[5|12] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|12]/c11/BL blk3[7|9]/c11/VDD blk3[7|12]/c01/BLB VSUBS blk3[5|9]/c11/WL blk3[7|12]/c01/BL
++ blk3[7|12]/c11/BLB VSUBS sram_quad
+Xblk3[6|12] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|12]/c11/BL blk3[7|9]/c11/VDD blk3[7|12]/c01/BLB VSUBS blk3[6|9]/c11/WL blk3[7|12]/c01/BL
++ blk3[7|12]/c11/BLB VSUBS sram_quad
+Xblk3[7|12] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|12]/c11/BL blk3[7|9]/c11/VDD blk3[7|12]/c01/BLB VSUBS blk3[7|9]/c11/WL blk3[7|12]/c01/BL
++ blk3[7|12]/c11/BLB VSUBS sram_quad
+Xblk3[0|13] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|13]/c11/BL blk3[7|9]/c11/VDD blk3[7|13]/c01/BLB VSUBS blk3[0|9]/c11/WL blk3[7|13]/c01/BL
++ blk3[7|13]/c11/BLB VSUBS sram_quad
+Xblk3[1|13] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|13]/c11/BL blk3[7|9]/c11/VDD blk3[7|13]/c01/BLB VSUBS blk3[1|9]/c11/WL blk3[7|13]/c01/BL
++ blk3[7|13]/c11/BLB VSUBS sram_quad
+Xblk3[2|13] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|13]/c11/BL blk3[7|9]/c11/VDD blk3[7|13]/c01/BLB VSUBS blk3[2|9]/c11/WL blk3[7|13]/c01/BL
++ blk3[7|13]/c11/BLB VSUBS sram_quad
+Xblk3[3|13] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|13]/c11/BL blk3[7|9]/c11/VDD blk3[7|13]/c01/BLB VSUBS blk3[3|9]/c11/WL blk3[7|13]/c01/BL
++ blk3[7|13]/c11/BLB VSUBS sram_quad
+Xblk3[4|13] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|13]/c11/BL blk3[7|9]/c11/VDD blk3[7|13]/c01/BLB VSUBS blk3[4|9]/c11/WL blk3[7|13]/c01/BL
++ blk3[7|13]/c11/BLB VSUBS sram_quad
+Xblk3[5|13] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|13]/c11/BL blk3[7|9]/c11/VDD blk3[7|13]/c01/BLB VSUBS blk3[5|9]/c11/WL blk3[7|13]/c01/BL
++ blk3[7|13]/c11/BLB VSUBS sram_quad
+Xblk3[6|13] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|13]/c11/BL blk3[7|9]/c11/VDD blk3[7|13]/c01/BLB VSUBS blk3[6|9]/c11/WL blk3[7|13]/c01/BL
++ blk3[7|13]/c11/BLB VSUBS sram_quad
+Xblk3[7|13] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|13]/c11/BL blk3[7|9]/c11/VDD blk3[7|13]/c01/BLB VSUBS blk3[7|9]/c11/WL blk3[7|13]/c01/BL
++ blk3[7|13]/c11/BLB VSUBS sram_quad
+Xblk3[0|14] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|14]/c11/BL blk3[7|9]/c11/VDD blk3[7|14]/c01/BLB VSUBS blk3[0|9]/c11/WL blk3[7|14]/c01/BL
++ blk3[7|14]/c11/BLB VSUBS sram_quad
+Xblk3[1|14] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|14]/c11/BL blk3[7|9]/c11/VDD blk3[7|14]/c01/BLB VSUBS blk3[1|9]/c11/WL blk3[7|14]/c01/BL
++ blk3[7|14]/c11/BLB VSUBS sram_quad
+Xblk3[2|14] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|14]/c11/BL blk3[7|9]/c11/VDD blk3[7|14]/c01/BLB VSUBS blk3[2|9]/c11/WL blk3[7|14]/c01/BL
++ blk3[7|14]/c11/BLB VSUBS sram_quad
+Xblk3[3|14] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|14]/c11/BL blk3[7|9]/c11/VDD blk3[7|14]/c01/BLB VSUBS blk3[3|9]/c11/WL blk3[7|14]/c01/BL
++ blk3[7|14]/c11/BLB VSUBS sram_quad
+Xblk3[4|14] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|14]/c11/BL blk3[7|9]/c11/VDD blk3[7|14]/c01/BLB VSUBS blk3[4|9]/c11/WL blk3[7|14]/c01/BL
++ blk3[7|14]/c11/BLB VSUBS sram_quad
+Xblk3[5|14] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|14]/c11/BL blk3[7|9]/c11/VDD blk3[7|14]/c01/BLB VSUBS blk3[5|9]/c11/WL blk3[7|14]/c01/BL
++ blk3[7|14]/c11/BLB VSUBS sram_quad
+Xblk3[6|14] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|14]/c11/BL blk3[7|9]/c11/VDD blk3[7|14]/c01/BLB VSUBS blk3[6|9]/c11/WL blk3[7|14]/c01/BL
++ blk3[7|14]/c11/BLB VSUBS sram_quad
+Xblk3[7|14] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|14]/c11/BL blk3[7|9]/c11/VDD blk3[7|14]/c01/BLB VSUBS blk3[7|9]/c11/WL blk3[7|14]/c01/BL
++ blk3[7|14]/c11/BLB VSUBS sram_quad
+Xblk3[0|15] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[0|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|15]/c11/BL blk3[7|9]/c11/VDD blk3[7|15]/c01/BLB VSUBS blk3[0|9]/c11/WL blk3[7|15]/c01/BL
++ blk3[7|15]/c11/BLB VSUBS sram_quad
+Xblk3[1|15] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[1|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|15]/c11/BL blk3[7|9]/c11/VDD blk3[7|15]/c01/BLB VSUBS blk3[1|9]/c11/WL blk3[7|15]/c01/BL
++ blk3[7|15]/c11/BLB VSUBS sram_quad
+Xblk3[2|15] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[2|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|15]/c11/BL blk3[7|9]/c11/VDD blk3[7|15]/c01/BLB VSUBS blk3[2|9]/c11/WL blk3[7|15]/c01/BL
++ blk3[7|15]/c11/BLB VSUBS sram_quad
+Xblk3[3|15] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[3|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|15]/c11/BL blk3[7|9]/c11/VDD blk3[7|15]/c01/BLB VSUBS blk3[3|9]/c11/WL blk3[7|15]/c01/BL
++ blk3[7|15]/c11/BLB VSUBS sram_quad
+Xblk3[4|15] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[4|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|15]/c11/BL blk3[7|9]/c11/VDD blk3[7|15]/c01/BLB VSUBS blk3[4|9]/c11/WL blk3[7|15]/c01/BL
++ blk3[7|15]/c11/BLB VSUBS sram_quad
+Xblk3[5|15] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[5|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|15]/c11/BL blk3[7|9]/c11/VDD blk3[7|15]/c01/BLB VSUBS blk3[5|9]/c11/WL blk3[7|15]/c01/BL
++ blk3[7|15]/c11/BLB VSUBS sram_quad
+Xblk3[6|15] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[6|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|15]/c11/BL blk3[7|9]/c11/VDD blk3[7|15]/c01/BLB VSUBS blk3[6|9]/c11/WL blk3[7|15]/c01/BL
++ blk3[7|15]/c11/BLB VSUBS sram_quad
+Xblk3[7|15] blk3[7|9]/c11/VDD blk3[7|9]/c11/VDD blk3[7|9]/c10/WL blk3[7|9]/c11/VDD
++ blk3[7|15]/c11/BL blk3[7|9]/c11/VDD blk3[7|15]/c01/BLB VSUBS blk3[7|9]/c11/WL blk3[7|15]/c01/BL
++ blk3[7|15]/c11/BLB VSUBS sram_quad
+.ends
+
+.subckt sram_array_64x32 WL[0] WL[1] WL[2] WL[3] WL[4] WL[5] WL[6] WL[7] WL[8] WL[9]
++ WL[10] WL[11] WL[12] WL[13] WL[14] WL[15] WL[16] WL[17] WL[18] WL[19] WL[20] WL[21]
++ WL[22] WL[23] WL[24] WL[25] WL[26] WL[27] WL[28] WL[29] WL[30] WL[31] WL[32] WL[33]
++ WL[34] WL[35] WL[36] WL[37] WL[38] WL[39] WL[40] WL[41] WL[42] WL[43] WL[44] WL[45]
++ WL[46] WL[47] WL[48] WL[49] WL[50] WL[51] WL[52] WL[53] WL[54] WL[55] WL[56] WL[57]
++ WL[58] WL[59] WL[60] WL[61] WL[62] WL[63] BL[0] BLB[0] BL[1] BLB[1] BL[2] BLB[2]
++ BL[3] BLB[3] BL[4] BLB[4] BL[5] BLB[5] BL[6] BLB[6] BL[7] BLB[7] BL[8] BLB[8] BL[9]
++ BLB[9] BL[10] BLB[10] BL[11] BLB[11] BL[12] BLB[12] BL[13] BLB[13] BL[14] BLB[14]
++ BL[15] BLB[15] BL[16] BLB[16] BL[17] BLB[17] BL[18] BLB[18] BL[19] BLB[19] BL[20]
++ BLB[20] BL[21] BLB[21] BL[22] BLB[22] BL[23] BLB[23] BL[24] BLB[24] BL[25] BLB[25]
++ BL[26] BLB[26] BL[27] BLB[27] BL[28] BLB[28] BL[29] BLB[29] BL[30] BLB[30] BL[31]
++ BLB[31] GND VDD
+Xcells WL[45] WL[21] WL[61] WL[37] WL[10] WL[53] WL[26] WL[2] WL[42] WL[18] WL[58]
++ WL[34] BL[4] WL[50] BL[12] BL[3] WL[15] BL[11] WL[7] WL[31] BL[19] BLB[0] BLB[19]
++ WL[47] WL[23] WL[63] WL[39] WL[12] WL[55] WL[28] WL[4] BLB[14] WL[44] BL[24] BLB[13]
++ WL[20] WL[60] WL[36] WL[52] BL[23] BL[6] BL[31] BL[14] BLB[8] BLB[7] BL[5] WL[9]
++ BL[13] WL[25] WL[1] BLB[28] WL[41] BLB[27] WL[17] WL[57] WL[14] WL[33] BLB[2] BLB[1]
++ WL[30] WL[6] WL[49] WL[46] WL[22] BL[26] WL[62] WL[38] BLB[21] BL[0] WL[54] BLB[16]
++ BLB[15] BL[25] BL[8] BL[16] BL[7] WL[11] BL[15] WL[27] BLB[10] WL[3] BLB[31] BLB[9]
++ WL[43] WL[19] WL[59] WL[35] WL[51] WL[8] BLB[30] BLB[29] BL[20] BLB[12] WL[24] BLB[26]
++ BLB[4] BLB[11] WL[0] BLB[25] BLB[3] BL[28] WL[40] WL[16] BL[22] WL[56] WL[32] BL[2]
++ BL[30] WL[48] BL[27] BLB[24] BL[10] BLB[23] BL[21] BL[1] BLB[22] BLB[6] BL[18] BLB[18]
++ BLB[17] BLB[5] BLB[20] BL[29] WL[13] BL[9] VDD WL[29] BL[17] WL[5] GND sram_array_64x32_cells
+.ends
+

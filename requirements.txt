@@ -1,0 +1,8 @@
+# Python >= 3.10
+numpy
+matplotlib
+pillow
+klayout          # layout rendering for the pictures and the video
+pygments         # code panels in the video
+imageio-ffmpeg   # video encoding
+# narration (optional, only for `python -m video.make render`): kokoro-onnx, soundfile

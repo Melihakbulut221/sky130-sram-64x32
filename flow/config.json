@@ -1,0 +1,60 @@
+{
+    "DESIGN_NAME": "sram_64x32",
+    "VERILOG_FILES": [
+        "dir::../rtl/sram_64x32.v"
+    ],
+    "CLOCK_PORT": "clk",
+    "CLOCK_PERIOD": 20,
+    "MACROS": {
+        "sram_array_64x32": {
+            "gds": [
+                "dir::../macro/sram_array_64x32.gds"
+            ],
+            "lef": [
+                "dir::../macro/sram_array_64x32.lef"
+            ],
+            "vh": [
+                "dir::../macro/sram_array_64x32.bb.v"
+            ],
+            "lib": {
+                "*": [
+                    "dir::../macro/sram_array_64x32.lib"
+                ]
+            },
+            "instances": {
+                "u_array": {
+                    "location": [
+                        60,
+                        76
+                    ],
+                    "orientation": "N"
+                }
+            }
+        }
+    },
+    "PDN_MACRO_CONNECTIONS": [
+        "u_array VPWR VGND VDD GND"
+    ],
+    "FP_SIZING": "absolute",
+    "DIE_AREA": [
+        0,
+        0,
+        225,
+        156
+    ],
+    "PL_TARGET_DENSITY_PCT": 55,
+    "PDN_VPITCH": 40,
+    "PDN_VOFFSET": 8,
+    "FP_MACRO_HORIZONTAL_HALO": 6,
+    "FP_MACRO_VERTICAL_HALO": 6,
+    "IO_PIN_ORDER_CFG": "dir::pin_order.cfg",
+    "RSZ_DONT_TOUCH_RX": "^bl\\[\\d+\\]$|^blb\\[\\d+\\]$|^phi|^clk_i$|^clkb$",
+    "DESIGN_REPAIR_MAX_SLEW_PCT": 40,
+    "DESIGN_REPAIR_MAX_CAP_PCT": 40,
+    "PNR_SDC_FILE": "dir::sram.sdc",
+    "SIGNOFF_SDC_FILE": "dir::sram.sdc",
+    "RUN_CTS": false,
+    "PDN_MULTILAYER": false,
+    "RT_MAX_LAYER": "met4",
+    "PDN_CFG": "dir::pdn_cfg.tcl"
+}

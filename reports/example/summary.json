@@ -1,0 +1,17 @@
+{
+ "design__die__area": 67750,
+ "design__instance__count__stdcell": 732,
+ "klayout__drc_error__count": 0,
+ "magic__drc_error__count": 0,
+ "design__lvs_error__count": 0,
+ "antenna__violating__nets": 0,
+ "design__power_grid_violation__count": 0,
+ "route__drc_errors": 0,
+ "timing__setup__wns": 0,
+ "timing__hold__wns": 0,
+ "timing__setup__ws": 6.853513506252055,
+ "timing__hold__ws": 0.114556867234753,
+ "design__xor_difference__count": 0,
+ "ir__drop__worst": 0.000772,
+ "clock_period_ns": 25
+}

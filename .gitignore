@@ -1,0 +1,24 @@
+# local tools and environments (see README: "Reproducing")
+.venv
+tools/
+__pycache__/
+*.pyc
+.DS_Store
+
+# simulation scratch: decks, logs, waveforms, generated model libraries
+sim/
+
+# place-and-route run directories (the final views are copied to release/ and reports/)
+flow/runs/
+flow/*.log
+example/runs/
+example/*.log
+
+# intermediate outputs; the reports worth keeping are copied to reports/
+out/
+
+# video build caches
+video/tts_cache_en/
+video/preview/
+tb/work/
+*.mp4

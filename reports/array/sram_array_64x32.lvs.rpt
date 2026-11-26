@@ -1,0 +1,277 @@
+
+Circuit 1 cell sky130_fd_pr__nfet_01v8 and Circuit 2 cell sky130_fd_pr__nfet_01v8 are black boxes.
+Warning: Equate pins:  cell sky130_fd_pr__nfet_01v8 is a placeholder, treated as a black box.
+Warning: Equate pins:  cell sky130_fd_pr__nfet_01v8 is a placeholder, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_pr__nfet_01v8         |Circuit 2: sky130_fd_pr__nfet_01v8         
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+4                                          |4                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_pr__nfet_01v8 and sky130_fd_pr__nfet_01v8 are equivalent.
+
+Circuit 1 cell sky130_fd_pr__pfet_01v8_hvt and Circuit 2 cell sky130_fd_pr__pfet_01v8_hvt are black boxes.
+Warning: Equate pins:  cell sky130_fd_pr__pfet_01v8_hvt is a placeholder, treated as a black box.
+Warning: Equate pins:  cell sky130_fd_pr__pfet_01v8_hvt is a placeholder, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_pr__pfet_01v8_hvt     |Circuit 2: sky130_fd_pr__pfet_01v8_hvt     
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+4                                          |4                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_pr__pfet_01v8_hvt and sky130_fd_pr__pfet_01v8_hvt are equivalent.
+
+Subcircuit summary:
+Circuit 1: sram_bitcell                    |Circuit 2: sram_bitcell                    
+-------------------------------------------|-------------------------------------------
+sky130_fd_pr__nfet_01v8 (4)                |sky130_fd_pr__nfet_01v8 (4)                
+sky130_fd_pr__pfet_01v8_hvt (2)            |sky130_fd_pr__pfet_01v8_hvt (2)            
+Number of devices: 6                       |Number of devices: 6                       
+Number of nets: 9 **Mismatch**             |Number of nets: 7 **Mismatch**             
+---------------------------------------------------------------------------------------
+NET mismatches: Class fragments follow (with fanout counts):
+Circuit 1: sram_bitcell                    |Circuit 2: sram_bitcell                    
+
+---------------------------------------------------------------------------------------
+Net: WL                                    |Net: WL                                    
+  sky130_fd_pr__nfet_01v8/2 = 2            |  sky130_fd_pr__nfet_01v8/2 = 2            
+                                           |                                           
+Net: GND                                   |Net: GND                                   
+  sky130_fd_pr__nfet_01v8/(1|3) = 2        |  sky130_fd_pr__nfet_01v8/(1|3) = 2        
+                                           |  sky130_fd_pr__nfet_01v8/4 = 4            
+                                           |                                           
+Net: w_253_n64#                            |(no matching net)                          
+  sky130_fd_pr__pfet_01v8_hvt/4 = 2        |                                           
+                                           |                                           
+Net: VDD                                   |(no matching net)                          
+  sky130_fd_pr__pfet_01v8_hvt/(1|3) = 2    |                                           
+---------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+Net: BLB                                   |Net: BLB                                   
+  sky130_fd_pr__nfet_01v8/(1|3) = 1        |  sky130_fd_pr__nfet_01v8/(1|3) = 1        
+                                           |                                           
+Net: BL                                    |Net: BL                                    
+  sky130_fd_pr__nfet_01v8/(1|3) = 1        |  sky130_fd_pr__nfet_01v8/(1|3) = 1        
+---------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+Net: VSUBS                                 |Net: VDD                                   
+  sky130_fd_pr__nfet_01v8/4 = 4            |  sky130_fd_pr__pfet_01v8_hvt/(1|3) = 2    
+                                           |  sky130_fd_pr__pfet_01v8_hvt/4 = 2        
+---------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+Net: a_29_28#                              |Net: QB                                    
+  sky130_fd_pr__nfet_01v8/(1|3) = 2        |  sky130_fd_pr__nfet_01v8/2 = 1            
+  sky130_fd_pr__pfet_01v8_hvt/2 = 1        |  sky130_fd_pr__pfet_01v8_hvt/2 = 1        
+  sky130_fd_pr__pfet_01v8_hvt/(1|3) = 1    |  sky130_fd_pr__nfet_01v8/(1|3) = 2        
+  sky130_fd_pr__nfet_01v8/2 = 1            |  sky130_fd_pr__pfet_01v8_hvt/(1|3) = 1    
+                                           |                                           
+Net: a_55_58#                              |Net: Q                                     
+  sky130_fd_pr__nfet_01v8/2 = 1            |  sky130_fd_pr__nfet_01v8/(1|3) = 2        
+  sky130_fd_pr__pfet_01v8_hvt/(1|3) = 1    |  sky130_fd_pr__pfet_01v8_hvt/(1|3) = 1    
+  sky130_fd_pr__nfet_01v8/(1|3) = 2        |  sky130_fd_pr__nfet_01v8/2 = 1            
+  sky130_fd_pr__pfet_01v8_hvt/2 = 1        |  sky130_fd_pr__pfet_01v8_hvt/2 = 1        
+---------------------------------------------------------------------------------------
+DEVICE mismatches: Class fragments follow (with node fanout counts):
+Circuit 1: sram_bitcell                    |Circuit 2: sram_bitcell                    
+
+---------------------------------------------------------------------------------------
+Instance: sky130_fd_pr__pfet_01v8_hvt:4    |Instance: sky130_fd_pr__pfet_01v8_hvt:pur  
+  (1,3) = (5,2)                            |  (1,3) = (5,4)                            
+  2 = 5                                    |  2 = 5                                    
+  4 = 2                                    |  4 = 4                                    
+                                           |                                           
+Instance: sky130_fd_pr__pfet_01v8_hvt:1    |Instance: sky130_fd_pr__pfet_01v8_hvt:pul  
+  (1,3) = (5,2)                            |  (1,3) = (5,4)                            
+  2 = 5                                    |  2 = 5                                    
+  4 = 2                                    |  4 = 4                                    
+---------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+Instance: sky130_fd_pr__nfet_01v8:5        |Instance: sky130_fd_pr__nfet_01v8:pgr      
+  (1,3) = (5,2)                            |  (1,3) = (5,1)                            
+  2 = 5                                    |  2 = 2                                    
+  4 = 4                                    |  4 = 6                                    
+                                           |                                           
+Instance: sky130_fd_pr__nfet_01v8:0        |Instance: sky130_fd_pr__nfet_01v8:pgl      
+  (1,3) = (5,2)                            |  (1,3) = (5,1)                            
+  2 = 5                                    |  2 = 2                                    
+  4 = 4                                    |  4 = 6                                    
+                                           |                                           
+Instance: sky130_fd_pr__nfet_01v8:3        |Instance: sky130_fd_pr__nfet_01v8:pdr      
+  (1,3) = (5,1)                            |  (1,3) = (6,5)                            
+  2 = 2                                    |  2 = 5                                    
+  4 = 4                                    |  4 = 6                                    
+                                           |                                           
+Instance: sky130_fd_pr__nfet_01v8:2        |Instance: sky130_fd_pr__nfet_01v8:pdl      
+  (1,3) = (5,1)                            |  (1,3) = (6,5)                            
+  2 = 2                                    |  2 = 5                                    
+  4 = 4                                    |  4 = 6                                    
+---------------------------------------------------------------------------------------
+Netlists do not match.
+Port matching may fail to disambiguate symmetries.
+  Flattening non-matched subcircuits sram_bitcell sram_bitcell
+Flattening unmatched subcell sram_array_64x32_cells in circuit sram_array_64x32 (0)(1 instance)
+Flattening unmatched subcell sram_quad in circuit sram_array_64x32 (0)(512 instances)
+
+Subcircuit summary:
+Circuit 1: sram_array_64x32                |Circuit 2: sram_array_64x32                
+-------------------------------------------|-------------------------------------------
+sky130_fd_pr__nfet_01v8 (8192)             |sky130_fd_pr__nfet_01v8 (8192)             
+sky130_fd_pr__pfet_01v8_hvt (4096)         |sky130_fd_pr__pfet_01v8_hvt (4096)         
+Number of devices: 12288                   |Number of devices: 12288                   
+Number of nets: 4226                       |Number of nets: 4226                       
+---------------------------------------------------------------------------------------
+Resolving symmetries by property value.
+Resolving symmetries by pin name.
+Netlists match uniquely.
+
+Subcircuit pins:
+Circuit 1: sram_array_64x32                |Circuit 2: sram_array_64x32                
+-------------------------------------------|-------------------------------------------
+GND                                        |GND                                        
+VDD                                        |VDD                                        
+BL[17]                                     |BL[17]                                     
+BL[9]                                      |BL[9]                                      
+BL[29]                                     |BL[29]                                     
+BLB[20]                                    |BLB[20]                                    
+BLB[5]                                     |BLB[5]                                     
+BLB[17]                                    |BLB[17]                                    
+BLB[18]                                    |BLB[18]                                    
+BL[18]                                     |BL[18]                                     
+BLB[6]                                     |BLB[6]                                     
+BLB[22]                                    |BLB[22]                                    
+BL[1]                                      |BL[1]                                      
+BL[21]                                     |BL[21]                                     
+BLB[23]                                    |BLB[23]                                    
+BL[10]                                     |BL[10]                                     
+BLB[24]                                    |BLB[24]                                    
+BL[27]                                     |BL[27]                                     
+BL[30]                                     |BL[30]                                     
+BL[2]                                      |BL[2]                                      
+BL[22]                                     |BL[22]                                     
+BL[28]                                     |BL[28]                                     
+BLB[3]                                     |BLB[3]                                     
+BLB[25]                                    |BLB[25]                                    
+BLB[11]                                    |BLB[11]                                    
+BLB[4]                                     |BLB[4]                                     
+BLB[26]                                    |BLB[26]                                    
+BLB[12]                                    |BLB[12]                                    
+BL[20]                                     |BL[20]                                     
+BLB[29]                                    |BLB[29]                                    
+BLB[30]                                    |BLB[30]                                    
+BLB[9]                                     |BLB[9]                                     
+BLB[31]                                    |BLB[31]                                    
+BLB[10]                                    |BLB[10]                                    
+BL[15]                                     |BL[15]                                     
+BL[7]                                      |BL[7]                                      
+BL[16]                                     |BL[16]                                     
+BL[8]                                      |BL[8]                                      
+BL[25]                                     |BL[25]                                     
+BLB[15]                                    |BLB[15]                                    
+BLB[16]                                    |BLB[16]                                    
+BL[0]                                      |BL[0]                                      
+BLB[21]                                    |BLB[21]                                    
+BL[26]                                     |BL[26]                                     
+BLB[1]                                     |BLB[1]                                     
+BLB[2]                                     |BLB[2]                                     
+BLB[27]                                    |BLB[27]                                    
+BLB[28]                                    |BLB[28]                                    
+BL[13]                                     |BL[13]                                     
+BL[5]                                      |BL[5]                                      
+BLB[7]                                     |BLB[7]                                     
+BLB[8]                                     |BLB[8]                                     
+BL[14]                                     |BL[14]                                     
+BL[31]                                     |BL[31]                                     
+BL[6]                                      |BL[6]                                      
+BL[23]                                     |BL[23]                                     
+BLB[13]                                    |BLB[13]                                    
+BL[24]                                     |BL[24]                                     
+BLB[14]                                    |BLB[14]                                    
+BLB[19]                                    |BLB[19]                                    
+BLB[0]                                     |BLB[0]                                     
+BL[19]                                     |BL[19]                                     
+BL[11]                                     |BL[11]                                     
+BL[3]                                      |BL[3]                                      
+BL[12]                                     |BL[12]                                     
+BL[4]                                      |BL[4]                                      
+WL[5]                                      |WL[5]                                      
+WL[29]                                     |WL[29]                                     
+WL[13]                                     |WL[13]                                     
+WL[48]                                     |WL[48]                                     
+WL[32]                                     |WL[32]                                     
+WL[56]                                     |WL[56]                                     
+WL[16]                                     |WL[16]                                     
+WL[40]                                     |WL[40]                                     
+WL[0]                                      |WL[0]                                      
+WL[24]                                     |WL[24]                                     
+WL[8]                                      |WL[8]                                      
+WL[51]                                     |WL[51]                                     
+WL[35]                                     |WL[35]                                     
+WL[59]                                     |WL[59]                                     
+WL[19]                                     |WL[19]                                     
+WL[43]                                     |WL[43]                                     
+WL[3]                                      |WL[3]                                      
+WL[27]                                     |WL[27]                                     
+WL[11]                                     |WL[11]                                     
+WL[54]                                     |WL[54]                                     
+WL[38]                                     |WL[38]                                     
+WL[62]                                     |WL[62]                                     
+WL[22]                                     |WL[22]                                     
+WL[46]                                     |WL[46]                                     
+WL[49]                                     |WL[49]                                     
+WL[6]                                      |WL[6]                                      
+WL[30]                                     |WL[30]                                     
+WL[33]                                     |WL[33]                                     
+WL[14]                                     |WL[14]                                     
+WL[57]                                     |WL[57]                                     
+WL[17]                                     |WL[17]                                     
+WL[41]                                     |WL[41]                                     
+WL[1]                                      |WL[1]                                      
+WL[25]                                     |WL[25]                                     
+WL[9]                                      |WL[9]                                      
+WL[52]                                     |WL[52]                                     
+WL[36]                                     |WL[36]                                     
+WL[60]                                     |WL[60]                                     
+WL[20]                                     |WL[20]                                     
+WL[44]                                     |WL[44]                                     
+WL[4]                                      |WL[4]                                      
+WL[28]                                     |WL[28]                                     
+WL[55]                                     |WL[55]                                     
+WL[12]                                     |WL[12]                                     
+WL[39]                                     |WL[39]                                     
+WL[63]                                     |WL[63]                                     
+WL[23]                                     |WL[23]                                     
+WL[47]                                     |WL[47]                                     
+WL[31]                                     |WL[31]                                     
+WL[7]                                      |WL[7]                                      
+WL[15]                                     |WL[15]                                     
+WL[50]                                     |WL[50]                                     
+WL[34]                                     |WL[34]                                     
+WL[58]                                     |WL[58]                                     
+WL[18]                                     |WL[18]                                     
+WL[42]                                     |WL[42]                                     
+WL[2]                                      |WL[2]                                      
+WL[26]                                     |WL[26]                                     
+WL[53]                                     |WL[53]                                     
+WL[10]                                     |WL[10]                                     
+WL[37]                                     |WL[37]                                     
+WL[61]                                     |WL[61]                                     
+WL[21]                                     |WL[21]                                     
+WL[45]                                     |WL[45]                                     
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sram_array_64x32 and sram_array_64x32 are equivalent.
+
+Final result: Circuits match uniquely.
+.

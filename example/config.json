@@ -1,0 +1,59 @@
+{
+    "DESIGN_NAME": "sram_bist_top",
+    "VERILOG_FILES": [
+        "dir::sram_bist_top.v",
+        "dir::sram_bist.v"
+    ],
+    "CLOCK_PORT": "clk",
+    "CLOCK_PERIOD": 25,
+    "MACROS": {
+        "sram_64x32": {
+            "gds": [
+                "dir::../release/sram_64x32.gds"
+            ],
+            "lef": [
+                "dir::../release/sram_64x32.lef"
+            ],
+            "vh": [
+                "dir::../release/sram_64x32.bb.v"
+            ],
+            "lib": {
+                "*_tt_025C_1v80": [
+                    "dir::../release/sram_64x32__tt_025C_1v80.lib"
+                ],
+                "*_ss_100C_1v60": [
+                    "dir::../release/sram_64x32__ss_100C_1v60.lib"
+                ],
+                "*_ff_n40C_1v95": [
+                    "dir::../release/sram_64x32__ff_n40C_1v95.lib"
+                ]
+            },
+            "instances": {
+                "u_mem": {
+                    "location": [
+                        40,
+                        78
+                    ],
+                    "orientation": "N"
+                }
+            }
+        }
+    },
+    "PDN_MACRO_CONNECTIONS": [
+        "u_mem VPWR VGND VPWR VGND"
+    ],
+    "FP_SIZING": "absolute",
+    "DIE_AREA": [
+        0,
+        0,
+        271,
+        250
+    ],
+    "PL_TARGET_DENSITY_PCT": 30,
+    "PDN_VPITCH": 40,
+    "PDN_VOFFSET": 8,
+    "PDN_HPITCH": 40,
+    "PDN_HOFFSET": 8,
+    "FP_MACRO_HORIZONTAL_HALO": 6,
+    "FP_MACRO_VERTICAL_HALO": 6
+}

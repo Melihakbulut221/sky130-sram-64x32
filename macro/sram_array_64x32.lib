@@ -1,0 +1,55 @@
+/* Liberty view of the bit-cell array macro: pin directions and capacitances only.
+   The array has no timing arcs of its own; the timing of the complete memory
+   (sram_64x32) is characterised with SPICE and published in sram_64x32__*.lib. */
+library (sram_array_64x32) {
+  delay_model : table_lookup;
+  time_unit : "1ns";
+  voltage_unit : "1V";
+  current_unit : "1mA";
+  pulling_resistance_unit : "1kohm";
+  leakage_power_unit : "1nW";
+  capacitive_load_unit (1, pf);
+  nom_process : 1.0;
+  nom_voltage : 1.8;
+  nom_temperature : 25.0;
+  input_threshold_pct_rise : 50.0;
+  input_threshold_pct_fall : 50.0;
+  output_threshold_pct_rise : 50.0;
+  output_threshold_pct_fall : 50.0;
+  slew_lower_threshold_pct_rise : 20.0;
+  slew_upper_threshold_pct_rise : 80.0;
+  slew_lower_threshold_pct_fall : 20.0;
+  slew_upper_threshold_pct_fall : 80.0;
+  slew_derate_from_library : 1.0;
+  default_max_transition : 1.5;
+  default_fanout_load : 1.0;
+  default_inout_pin_cap : 0.03;
+  default_input_pin_cap : 0.085;
+  default_output_pin_cap : 0.0;
+  default_leakage_power_density : 0.0;
+  voltage_map (VDD, 1.8);
+  voltage_map (GND, 0.0);
+  type (wl_bus) { base_type : array; data_type : bit; bit_width : 64; bit_from : 63; bit_to : 0; downto : true; }
+  type (bl_bus) { base_type : array; data_type : bit; bit_width : 32; bit_from : 31; bit_to : 0; downto : true; }
+  cell (sram_array_64x32) {
+    area : 10357.99;
+    is_macro_cell : true;
+    dont_touch : true;
+    dont_use : true;
+    interface_timing : true;
+    pg_pin (VDD) { voltage_name : VDD; pg_type : primary_power; }
+    pg_pin (GND) { voltage_name : GND; pg_type : primary_ground; }
+    bus (WL) {
+      bus_type : wl_bus; direction : input; capacitance : 0.085;
+      related_power_pin : VDD; related_ground_pin : GND;
+    }
+    bus (BL) {
+      bus_type : bl_bus; direction : inout; capacitance : 0.030;
+      related_power_pin : VDD; related_ground_pin : GND;
+    }
+    bus (BLB) {
+      bus_type : bl_bus; direction : inout; capacitance : 0.030;
+      related_power_pin : VDD; related_ground_pin : GND;
+    }
+  }
+}
