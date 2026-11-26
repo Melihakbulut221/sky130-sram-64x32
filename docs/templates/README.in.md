@@ -11,6 +11,10 @@ KLayout, Netgen, ngspice, OpenROAD.
 > **Not fabricated**: every number below is from simulation or from checks on the layout.
 > See [what is not covered](docs/verification.md#not-covered).
 
+A 9-minute video tour, from the cell to the finished layout:
+[sram_sky130_video.mp4](https://github.com/Melihakbulut221/sky130-sram-64x32/releases/download/v1.0/sram_sky130_video.mp4)
+(subtitles: [`video/sram_sky130_video.srt`](video/sram_sky130_video.srt)).
+
 ## Results
 
 | | |
