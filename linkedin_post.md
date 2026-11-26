@@ -27,7 +27,18 @@ What the project taught me:
 💡 Tools assume ordinary clocks. The clock-tree tool followed my phase clock through the word-line gates onto the bit lines and crashed. A clock that ends in a memory cell needs its tree built by hand
 💡 Simulating 20,000 transistors needed a detour: the simulator copied every model variant of the process for every transistor, about 1 MB each, until the laptop ran out of memory. Writing one model per transistor size fixed it
 
-A short tour, from the cell to the finished layout, is in the video 👇
-Code, layout and all reports: https://github.com/Melihakbulut221/sky130-sram-64x32
+🎬 The two-minute video below goes from one cell to the finished layout 👇
+The video is generated from code too: the schematic, the butterfly curves and the SPICE waveforms are drawn from the simulation results, and the zooms through the layout are rendered from the GDS
+
+The full 9-minute walkthrough, the code, the layout and all reports: https://github.com/Melihakbulut221/sky130-sram-64x32
 
 #ICDesign #SRAM #MemoryDesign #SKY130 #OpenSourceSilicon #VLSI #Python #EDA
+
+---
+
+Attach `sram_sky130_short.mp4` (2 min 19 s) to this post. If the full video (`sram_sky130_video.mp4`, 8 min 48 s) is attached instead, replace the two video lines with:
+
+🎬 The 9-minute video below goes from one cell to the finished layout 👇
+The video is generated from code too: the schematic, the butterfly curves and the SPICE waveforms are drawn from the simulation results, and the zooms through the layout are rendered from the GDS
+
+Code, layout, all reports and a two-minute cut of the video: https://github.com/Melihakbulut221/sky130-sram-64x32
