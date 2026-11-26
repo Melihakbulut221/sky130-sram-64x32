@@ -4,6 +4,8 @@
     python -m video.make storyboard   -> video/preview/steps/*.jpg (no audio, no encoding)
     python -m video.make length       -> synthesise the narration and print the running time
     python -m video.make render       -> out/sram_sky130_video.mp4 (English, Kokoro voice)
+Add "short" to storyboard / length / render for the two-minute cut (video/script_short.py,
+out/sram_sky130_short.mp4).
 """
 import os
 import subprocess
@@ -16,7 +18,12 @@ from . import engine as E
 from . import style as S
 
 ROOT = E.ROOT
-NAME = "sram_sky130_video"
+VARIANTS = {"full": ("video.script", "sram_sky130_video", ""), "short": ("video.script_short", "sram_sky130_short", "_short")}
+
+
+def _steps(variant):
+    import importlib
+    return importlib.import_module(VARIANTS[variant][0]).build_steps()
 
 
 def docs():
@@ -43,10 +50,10 @@ def docs():
     shot("layout_columns", (L.MX + 2, L.MY - 26, L.MX + 60, L.MY + 6))
 
 
-def storyboard():
-    from . import script as L
-    steps = L.build_steps()
-    d = os.path.join(ROOT, "video", "preview", "steps")
+def storyboard(variant="full"):
+    steps = _steps(variant)
+    sfx = VARIANTS[variant][2]
+    d = os.path.join(ROOT, "video", "preview", "steps" + sfx)
     os.makedirs(d, exist_ok=True)
     for f in os.listdir(d):
         os.remove(os.path.join(d, f))
@@ -66,7 +73,7 @@ def storyboard():
         sheet = Image.new("RGB", (480 * 4, 270 * 4), S.BG)
         for j, t in enumerate(thumbs[s:s + 16]):
             sheet.paste(t, (480 * (j % 4), 270 * (j // 4)))
-        sheet.save(os.path.join(ROOT, "video", "preview", f"sheet{s // 16}.jpg"), quality=85)
+        sheet.save(os.path.join(ROOT, "video", "preview", f"sheet{sfx}{s // 16}.jpg"), quality=85)
     nsen = sum(len(E.sentences(s.text)) for s in steps)
     print(f"steps: {len(steps)}  distinct visuals: {k}  sentences: {nsen}  words: {words}  estimated length: {words * 0.38 / 60:.1f} min")
 
@@ -84,25 +91,23 @@ def normalize(path):
         os.remove(wav)
 
 
-def render():
-    from . import script as L
+def render(variant="full"):
     t0 = time.time()
-    steps = L.build_steps()
+    steps = _steps(variant)
     print(f"visuals ready: {time.time() - t0:.0f} s")
-    out = os.path.join(ROOT, "out", NAME + ".mp4")
-    total, nsen, nfr = E.render(steps, out, preview_dir=os.path.join(ROOT, "video", "preview", "final"))
+    out = os.path.join(ROOT, "out", VARIANTS[variant][1] + ".mp4")
+    total, nsen, nfr = E.render(steps, out, preview_dir=os.path.join(ROOT, "video", "preview", "final" + VARIANTS[variant][2]))
     normalize(out)
     print(f"length: {total / 60:.2f} min ({total:.1f} s)  sentences: {nsen}  frames: {nfr}  wall time: {time.time() - t0:.0f} s")
     print(out)
 
 
-def length():
-    from . import script as L
-    steps = L.build_steps()
+def length(variant="full"):
+    steps = _steps(variant)
     items, audio = E.timeline(steps)
     print(f"steps: {len(steps)}  sentences: {len(items)}  words: {sum(len(s.text.split()) for s in steps)}  "
           f"length: {len(audio) / E.SR / 60:.2f} min ({len(audio) / E.SR:.1f} s)")
 
 
 if __name__ == "__main__":
-    {"docs": docs, "storyboard": storyboard, "render": render, "length": length}[sys.argv[1]]()
+    {"docs": docs, "storyboard": storyboard, "render": render, "length": length}[sys.argv[1]](*sys.argv[2:3])

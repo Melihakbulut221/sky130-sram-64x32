@@ -11,9 +11,16 @@ KLayout, Netgen, ngspice, OpenROAD.
 > **Not fabricated**: every number below is from simulation or from checks on the layout.
 > See [what is not covered](docs/verification.md#not-covered).
 
-A 9-minute video tour, from the cell to the finished layout:
-[sram_sky130_video.mp4](https://github.com/Melihakbulut221/sky130-sram-64x32/releases/download/v1.0/sram_sky130_video.mp4)
-(subtitles: [`video/sram_sky130_video.srt`](video/sram_sky130_video.srt)).
+A video tour, from the cell to the finished layout:
+
+- 9 minutes: [sram_sky130_video.mp4](https://github.com/Melihakbulut221/sky130-sram-64x32/releases/download/v1.0/sram_sky130_video.mp4)
+  (subtitles: [`video_hf/sram_sky130_video.srt`](video_hf/sram_sky130_video.srt))
+- 2-minute cut: [sram_sky130_short.mp4](https://github.com/Melihakbulut221/sky130-sram-64x32/releases/download/v1.0/sram_sky130_short.mp4)
+  (subtitles: [`video_hf/sram_sky130_short.srt`](video_hf/sram_sky130_short.srt))
+
+The video is code as well: [`video_hf/`](video_hf) writes it as HTML + GSAP compositions for
+[HyperFrames](https://github.com/heygen-com/hyperframes). Schematics, curves and waveforms are drawn
+from the simulation results, and the layout pictures are rendered from the GDS.
 
 ## Results
 
@@ -73,7 +80,8 @@ More: [design notes](docs/design.md) · [data sheet](docs/datasheet.md) · [veri
 | [`example/`](example) | March C- self-test and an integration example that places the macro in a larger design |
 | [`reports/`](reports) | the reports behind the numbers above |
 | [`docs/`](docs) | data sheet, design notes, verification, results |
-| [`video/`](video) | the code that renders the explainer video |
+| [`video_hf/`](video_hf) | the explainer video: animated scenes generated as HyperFrames compositions, timed by the narration |
+| [`video/`](video) | narration (text to speech), layout shots from the GDS, and an earlier slide-style renderer |
 
 ## Reproducing
 
@@ -97,7 +105,17 @@ python -m sram.chipsim period        # clock-period sweep
 python -m sram.chipsim interface     # inputs switching at the setup / hold limits
 python -m sram.release               # assemble release/
 python -m sram.report                # docs/results.md
-python -m video.make render          # the video
+```
+
+The video needs Node.js ≥ 22 and [HyperFrames](https://github.com/heygen-com/hyperframes)
+(`npm install --prefix tools/hf hyperframes`; it renders with headless Chrome and FFmpeg).
+`video_hf/hf.sh` runs its CLI with the tools found in `tools/` or on the `PATH`, with telemetry off.
+
+```bash
+python -m video_hf.build full        # narration + pictures + composition -> video_hf/full/
+video_hf/hf.sh lint video_hf/full
+video_hf/hf.sh render video_hf/full -o out/sram_sky130_video.mp4 --crf 21
+python -m video_hf.build short       # the two-minute cut -> video_hf/short/
 ```
 
 ## Limits
